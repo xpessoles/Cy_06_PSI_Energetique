@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -77,7 +77,7 @@ Chapitre 1 -- \xxactivite%
 \setlength{\columnseprule}{0.4pt} 
 
 \ifprof
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -231,7 +231,7 @@ Exprimer les vitesses suivantes :
 \begin{enumerate}
 \item $\vectv{G_1}{1}{N}=\vectv{O}{1}{N}+\vect{G_1 O}\wedge \vecto{1}{N}=$ $L_1\vect{y_1}\wedge \dot{\theta}_1\vect{z_N}$ $=L_1 \dot{\theta}_1\vect{x_1}$.
 \item $\vectv{G_2}{2}{N}=$ $\left[  \dfrac{\dd \left( \vect{OA} + \vect{AG_2}\right)}{\dd t}\right]_{R_N}$ 
-$=\left[ \dfrac{\dd \left( R\vect{y_1}  -L_2 \vect{x_2}\right)}{\dd t}\right]_{R_N}$ $= -R\dot{\theta}_1\vect{x_1}  -L_2 \dot{\theta}_1\vect{y_2}$. 
+$=\left[ \dfrac{\dd \left( R\vect{y_1}  -L_2 \vect{x_2}\right)}{\dd t}\right]_{R_N}$ $= -R\dot{\theta}_1\vect{x_1}  -L_2 \dot{\theta}_2\vect{y_2}$. 
 
 On a aussi $\vectv{G_2}{2}{N}=$ $\left[  \dfrac{\dd \left( \vect{CA} + \vect{AG_2}\right)}{\dd t}\right]_{R_N}$ 
 $=\left[ \dfrac{\dd \left(  x_{24}(t)\vect{x_2}  -L_2 \vect{x_2}\right)}{\dd t}\right]_{R_N}$ $=  \dot{x}_{24}(t)  \vect{x_2}+\dot{\theta}_2\left(  x_{24}(t)  -L_2 \right)\vect{y_2}$.
@@ -265,7 +265,7 @@ $\dfrac{\dd \theta_2(t)}{\dd t}$ , $\dfrac{\dd x_{24}(t)}{\dd t}$ , $x_{24}(t)$ 
 \item $\ec{4}{N}$, en fonction de $\dfrac{\dd \theta_1(t)}{\dd t}$ et des paramètres inertiels et géométriques utiles.
 \end{enumerate}}
 \ifprof
-%\begin{corrige}~\\
+\begin{corrige}~\\
 \begin{enumerate}
 \item $\ec{1}{N}=\dfrac{1}{2}\torseurcin{V}{1}{N}\otimes \torseurci{1}{N}$ 
 $=\dfrac{1}{2}\torseurl{\vecto{1}{N}}{\vectv{G_1}{1}{N}}{G_1}\otimes \torseurl{M_1\vectv{G_1}{1}{N}}{\vectmc{G_1}{1}{N}}{G_1}$
@@ -289,7 +289,7 @@ $
 .
 \item $\ec{4}{N}=\dfrac{1}{2}C_4\dot{\theta}_2^2$ . 
 \end{enumerate}
-%\end{corrige}
+\end{corrige}
 \else
 \fi
 
@@ -430,7 +430,7 @@ les algues collées qui rajoutent du poids...
 
 
 \ifprof
-\end{multicols}
+%\end{multicols}
 \else
 \end{multicols}
 \fi
