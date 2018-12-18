@@ -1,0 +1,222 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 05}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant les méthodes énergétiques}
+
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Approche énergétique}
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+
+
+\def\xxtitreexo{Application 01}%Motorisation du moteur Haibike}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Pôle Chateaubriand -- Joliot-Curie}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{\textsf{Cycle 05}}
+
+\def\xxactivite{Application}
+\def\xxauteur{\textsl{Pôle Chateaubriand -- Joliot-Curie}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+%Les sources sont associées par un \emph{hacheur série}. La détermination des grandeurs électriques associées à ce montage permet de conclure vis à vis du cahier des charges.
+%\noindent \textbf{Résoudre :} à partir des modèles retenus :
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item choisir une méthode de résolution analytique, graphique, numérique;
+%\item mettre en \oe{}uvre une méthode de résolution.
+%\end{itemize}
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Rés -- C1.1 :} Loi entrée sortie géométrique et cinématique -- Fermeture géométrique.
+%\end{itemize}
+%
+%\noindent \textit{Mod2 -- C4.1 :} Représentation par schéma bloc.
+}}
+
+\def\xxfigures{
+\includegraphics[width=.6\linewidth]{images/fig_00}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 05 -- Modélisation mécanique -- Énergétique\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+
+On s’intéresse un dispositif d’ouverture des deux parties du vantail de gauche d’une porte automatique
+schématisé ci-dessous :
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01.png}
+\end{center}
+
+Le mécanisme étudié comprend essentiellement :
+\begin{itemize}
+\item un bâti 1 auquel est lié le repère $\repere{A}{x_1}{y_1}{z_1}$ supposé galiléen;
+\item deux vantaux 2 et 3 de dimensions identiques et de masse identique $M$;
+\item un châssis solidaire du vantail 2 et guidé en translation par rapport au bâti 1 ;
+\item deux poulies 4 et 5, de même rayon $R$, en rotation par rapport au châssis lié à 2 ;
+\item une courroie crantée dont les brins rectilignes, notés 6a et 6b, sont liés respectivement aux bâti 1 et
+au vantail 5;
+\item un moteur dont le stator est fixe sur le châssis lié à 2 et le rotor lié à la poulie 4.
+\end{itemize}
+
+On note :
+\begin{itemize}
+\item $g$, l‘accélération de la pesanteur orientée suivant $-\vect{z_1}$;
+\item $C_ m$, le couple moteur exercé par le stator sur le rotor ;
+\item $J$ , l’inertie équivalente, ramenée sur l’axe du moteur, de toutes les masses et inerties autres que
+celles des deux vantaux.
+\end{itemize}
+
+On néglige la masse de la courroie.
+On suppose toutes les liaisons parfaites et l’absence de glissement entre la courroie et les poulies.
+\begin{obj}
+Déterminer la loi entrée-sortie en effort  $C_m=f(M)$ en vue d’adapter les caractéristiques du moteur
+électrique aux performances souhaitées.
+\end{obj}
+
+\subparagraph{}
+\textit{Déterminer la relation entre $\omega_{42}$ et $\omega_{52}$ qui sont les vitesses de rotation respectives de 4/2 et 5/2.}
+\ifprof
+\begin{corrige}
+\end{corrige}\else\fi
+
+\subparagraph{}
+\textit{Donner :
+\begin{itemize}
+\item la relation entre $\omega_{42}$ et $u_{21}$ la vitesse de déplacement du vantail 2 par rapport au bâti 1 ;
+\item la relation entre $u_{21}$ et $u_{31}$ la vitesse de déplacement du vantail 3 par rapport au bâti 1.
+\end{itemize}}
+\ifprof
+\begin{corrige}
+\end{corrige}\else\fi
+
+\subparagraph{}
+\textit{Déterminer l’expression de l’énergie cinétique de l’ensemble $\Sigma=\left\{2,3,4,5\right\}$ dans son mouvement par rapport au bâti 1.}
+\ifprof
+\begin{corrige}
+\end{corrige}\else\fi
+
+\subparagraph{}
+\textit{Appliquer le théorème de l’énergie cinétique à $\Sigma$ dans son mouvement par rapport au bâti 1. En
+déduire la loi entrée-sortie en effort recherchée.}
+\ifprof
+\begin{corrige}
+\end{corrige}\else\fi
+
+\subparagraph{}
+\textit{Interpréter les différents termes de l’expression trouvée.}
+\ifprof
+\begin{corrige}
+\end{corrige}\else\fi
+
+\vspace{1cm}
+\footnotesize
+
+
+\paragraph*{Éléments de correction}
+%\begin{enumerate}
+%\item $\omega_m=\dfrac{R_{p2}}{R_{p1}}\dfrac{V_{30}}{R_e}$ et $\omega_{\text{m max}}=\SI{351}{rad.s^{-1}}$.
+%\item $C_m=\dfrac{1}{\eta}\left( T_{\text{coureur}\rightarrow 3} R_e \dfrac{R_{p1}}{R_{p2}}\right)$.
+%\item $P\left(0\to1/0 \right)=\dfrac{1}{0,9}\left(T R_e \dfrac{R_{p1}}{R_{p2}} \right) \omega_{\text{max}}=\SI{1349}{W}$.
+%\item ...
+%\end{enumerate}
+
+
+\begin{enumerate}
+\item $\omega_{42}=\omega_{52}$.
+\item $u_{21}=R\omega_{42}$ et $u_{31}=2u_{21}$.
+\item $E_{c\; \Sigma/1} = \dfrac{1}{2}\left(5MR^2+J\right)\omega_{42}^2$.
+\item $C_m=\left(5MR^2+J\right)\dot{\omega}_{42}$.
+\end{enumerate}
+
+\ifprof
+%\end{multicols}
+\else
+\end{multicols}
+\fi
+
+\newpage
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_01.png}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_02.png}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_03.png}
+\end{center}
+
+
+\end{document}
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01.png}
+\end{center}
+
+
+\subparagraph{}
+\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}\else\fi
+
+
