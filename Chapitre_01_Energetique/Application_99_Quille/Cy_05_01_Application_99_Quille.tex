@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -25,7 +25,7 @@
 % -------------------------------------
 
 \def\classe{\textsf{PSI$\star$ -- MP}}
-\def\xxnumpartie{Cycle 05}
+\def\xxnumpartie{Cycle 06}
 \def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant les méthodes énergétiques}
 
 \def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
@@ -145,7 +145,23 @@ $F_{h3} = 0$. Le vérin 2--4 est alors moteur et le vérin 3--5 est libre ($F_{h
 %\item Les conditions de déplacement rendent négligeables les effets dynamiques. Les théorèmes de la statique seront donc utilisés dans la suite.
 \end{itemize}
 
+Le modèle de calcul est donné dans les figures suivantes.
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_05_a}
+
+\textit{Modèle 2D}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05_b}
+
+\textit{Paramétrage}
+\end{center}
+
 \textbf{Données géométriques, massiques et inertielles}
+\begin{multicols}{2}
+\footnotesize
 
 $\vect{OA}=R\vect{y_1}$; $\vect{CA}=x_{24}(t)\vect{x_2}$; $\vect{AB}=x_{35}(t)\vect{x_3}$, 
 \begin{itemize}
@@ -155,8 +171,13 @@ $\vect{OA}=R\vect{y_1}$; $\vect{CA}=x_{24}(t)\vect{x_2}$; $\vect{AB}=x_{35}(t)\v
 \item Solide 4, masse $M_4$, centre d'inertie $C$, $\inertie{C}{4}=\matinertie{A_4}{B_4}{C_4}{0}{0}{0}{\left(\vect{x_2},\vect{y_2},\vect{z_N}, \right)}$.
 \item Solide 5, masse $M_5$, centre d'inertie $B$, $\inertie{B}{5}=\matinertie{A_5}{B_5}{C_5}{0}{0}{0}{\left(\vect{x_3},\vect{y_3},\vect{z_N}, \right)}$.
 \end{itemize}
+\normalsize
+
+\end{multicols}
 
 \textbf{Actions mécaniques}
+
+\footnotesize
 \begin{itemize}
 \item Action de pression de l'huile sur 2 : $\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x_2}}{\vect{0}}{C}$.
 \item Action de pression de l'huile sur 3 : $\torseurstat{T}{\text{ph}}{3}=\torseurl{-F_{h3}\vect{x_3}}{\vect{0}}{B}$.
@@ -164,6 +185,8 @@ $\vect{OA}=R\vect{y_1}$; $\vect{CA}=x_{24}(t)\vect{x_2}$; $\vect{AB}=x_{35}(t)\v
 \item Action de frottement visqueux de l'huile sur 3 : $\torseurstat{T}{\text{phf}}{3}=\torseurl{-k\dfrac{\dd x_{35}(t)}{\dd t}\vect{x_3}}{\vect{0}}{A}$ avec $k>0$.
 \item Action hydraudynamique de l'eau sur 1 : $\torseurstat{T}{\text{eau}}{1}=\torseurl{F_p\vect{z_1}+F_t\vect{x_1}}{\vect{0}}{P}$ avec $\vect{OP}=-h\vect{y_1}$.
 \end{itemize}
+
+\normalsize
 %
 %\begin{center}
 %\includegraphics[width=\linewidth]{images/fig_04}
@@ -182,23 +205,7 @@ $\vect{OA}=R\vect{y_1}$; $\vect{CA}=x_{24}(t)\vect{x_2}$; $\vect{AB}=x_{35}(t)\v
 %\end{center}
 
 
-Le modèle de calcul est donné dans les figures suivantes.
 
-
-
-
-
-\begin{center}
-\includegraphics[width=.7\linewidth]{images/fig_05_a}
-
-\textit{Modèle 2D}
-\end{center}
-
-\begin{center}
-\includegraphics[width=\linewidth]{images/fig_05_b}
-
-\textit{Paramétrage}
-\end{center}
 
 \fi
 
