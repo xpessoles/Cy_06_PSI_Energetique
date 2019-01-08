@@ -20,6 +20,18 @@
 \courstrue
 \coursfalse
 
+\newif\ifnormal
+%\normaltrue
+\normalfalse
+
+\newif\ifdifficile
+\difficilefalse
+%\difficiletrue
+
+\newif\iftdifficile
+%\tdifficilefalse
+\tdifficiletrue
+
 % -------------------------------------
 % Déclaration des titres
 % -------------------------------------
@@ -38,13 +50,13 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{19}%16
 
-\def\xxonglet{\textsf{Cycle 05}}
+\def\xxonglet{\textsf{Cycle 06}}
 
 \def\xxactivite{TD 02}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxtitreexo{Quille pendulaire}
+\def\xxtitreexo{Quille pendulaire \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2014}}
 
 \def\xxcompetences{%
@@ -56,7 +68,7 @@
 \includegraphics[width=.75\textwidth]{images/fig_00}
 }%figues de la page de garde
 \def\xxpied{%
-Cycle 05 -- Modélisation mécanique -- Énergétique\\% afin de valider leurs performances.\\
+Cycle 06 -- Modélisation mécanique -- Énergétique\\% afin de valider leurs performances.\\
 Chapitre 1 -- \xxactivite%
 }
 
@@ -209,6 +221,9 @@ $\vect{OA}=R\vect{y_1}$; $\vect{CA}=x_{24}(t)\vect{x_2}$; $\vect{AB}=x_{35}(t)\v
 
 \fi
 
+
+
+\ifnormal
 
 \subsection*{Vecteurs vitesse}
 
@@ -379,8 +394,20 @@ $\pext{\bar{E}}{E}{R_N} + \sum \pint{i}{j}{}=\dfrac{\dd \ec{E}{R_N}}{\dd t}$
 \else
 \fi
 
+\else
+\fi
+
+
+\iftdifficile
+
+\subparagraph{}\textit{ Exprimer la puissance motrice que fournit le vérin moteur en
+fonction des données du problème. La méthode sera précisément décrite. Chacun des termes seront calculés. Il n'est pas demandé d'écrire la relation finale.}
+\else
+\fi
+
 \ifprof
 \else
+
 
 On se place dans le cas où une commande en vitesse est générée à destination du vérin [2, 4]. Le vérin [3, 5]
 est libre. Cette commande <<~en trapèze de vitesse~>>  provoque le déplacement de la quille de la position $\theta_1=0$
