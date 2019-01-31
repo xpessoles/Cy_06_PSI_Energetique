@@ -44,7 +44,7 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{20}
 %\def\xxonglet{Part. 1 -- Ch. 3}
-\def\xxonglet{Cycle 02}
+\def\xxonglet{Cycle 06}
 
 \def\xxactivite{Application}
 \def\xxauteur{\textsl{X. Pessoles}}
@@ -71,7 +71,7 @@
 
 
 \def\xxpied{%
-Cycle 04 -- Modélisation mécanique -- Dynamique\\% afin de valider leurs performances.\\
+Cycle 06 -- Modélisation mécanique -- Énergétique\\% afin de valider leurs performances.\\
 Chapitre 1 -- \xxactivite%
 }
 
@@ -99,31 +99,795 @@ Chapitre 1 -- \xxactivite%
 \fi
 
 
-\section*{Exercice 1 -- Train d'engrenages simple}
+%\section*{Exercice 1 -- Train d'engrenages simple}
+%\setcounter{exo}{0}
+\section*{Exercice 1 -- Train d'engrenages (cheville NAO)}
+\setcounter{exo}{0}
 
-\section*{Exercice 2 -- Train d'engrenages (cheville NAO)}
 
-\section*{Exercice 3 -- Boite de vitesses à 2 vitesses}
+NAO est un robot humanoïde conçu par la société française Aldebaran. À l'origine il a été conçu comme prototype du robot Romeo, destiné à être au service des personnes. NAO est utilisé à l'heure actuelle dans la recherche en robotique et dans des domaines pédagogiques. 
+\begin{obj}
+On s'intéresse ici à la cheville NAO. On cherche à savoir si, à partir du moteur retenu par le constructeur, la chaîne de transmission de puissance permet de vérifier les exigences suivantes : 
+\begin{itemize}
+\item exigence 1.1.1.1 : la vitesse de roulis doit être inférieure à \SI{42}{tr/min};
+\item exigence 1.1.1.2 : la vitesse de tangage doit être inférieure à \SI{60}{tr/min}.
+\end{itemize}
 
-\section*{Exercice 4 -- Train épicycloïdal -- Type 1}
+\end{obj}
 
-\section*{Exercice 5 -- Train épicycloïdal -- Type 2}
 
-\section*{Exercice 6 -- Train épicycloïdal -- Type 3}
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/nao_01}
+\end{center}
 
-\section*{Exercice 7 -- Train épicycloïdal -- Type 4}
+La fréquence de rotation des moteurs permettant chacun des deux mouvements est de \SI{8300}{tr/min}.
 
-\section*{Exercice 8 -- Poulies -- courroies}
+Pour la chaîne de transmission de tangage on donne  le nombre de dents et le module de chaque roue dentée : 
+\begin{itemize}
+\item pignon moteur : $Z_m=20$, $M_m=0,3$;
+\item grand pignon 1 : $Z_1 = 80$, $M_1=0,3$;
+\item petit pignon 1 : $Z_1' = 25$, $M_1'=0,4$;
+\item grand pignon 2 : $Z_2 = 47$, $M_2=0,4$;
+\item petit pignon 2 : $Z_2' = 12$, $M_2'=0,4$;
+\item grand pignon 3 : $Z_3 = 58$, $M_3=0,4$;
+\item petit pignon 3 : $Z_3' = 10$, $M_3'=0,7$;
+\item roue de sortie : $Z_3 = 36$, $M_3=0,7$.
+\end{itemize}
 
-\section*{Exercice 9 -- Roulement sans glissement}
+\begin{center}
+\includegraphics[width=.95\linewidth]{images/nao_02}
+\end{center}
+
+Pour la chaîne de transmission du roulis on donne le nombre de dents et le module de chaque roue dentée : 
+\begin{itemize}
+\item pignon moteur : $Z_m=13$, $M_m=0,3$;
+\item grand pignon 1 : $Z_1 = 80$, $M_1=0,3$;
+\item petit pignon 1 : $Z_1' = 25$, $M_1'=0,4$;
+\item grand pignon 2 : $Z_2 = 47$, $M_2=0,4$;
+\item petit pignon 2 : $Z_2' = 12$, $M_2'=0,4$;
+\item grand pignon 3 : $Z_3 = 58$, $M_3=0,4$;
+\item petit pignon 3 : $Z_3' = 10$, $M_3'=0,7$;
+\item roue de sortie 3 : $Z_3 = 36$, $M_3=0,7$.
+\end{itemize}
+
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/nao_03}
+\end{center}
+
+
+
+
+\subparagraph{}
+\textit{Quels doivent être les rapports de réductions des transmissions par engrenage afin de respecter les exigences 1.1.1.1 et 1.1.1.2 ?}
+\ifprof
+\begin{corrige}
+D'après le diagramme de définition des blocs et le diagramme des exigences, les rapports de transmission doivent être : 
+\begin{itemize}
+\item pour l'axe de tangage : $\dfrac{N_{\text{moteur}}}{N_{\text{Tangage}}}=138,33$ au minimum; 
+\item pour l'axe de roulis :  $\dfrac{N_{\text{moteur}}}{N_{\text{Roulis}}}= 197,61$ au minimum.
+\end{itemize}
+\end{corrige}
+\else
+\fi
+
+
+\ifprof
+\subparagraph{}
+\textit{Dans le cas de l'axe de tangage, remplir le tableau suivant :}
+\begin{corrige}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Roue dentée & Module & Nb dents & Diamètre (mm)\\
+\hline
+Pignon 03 20 & 0,3 &20        & 6		\\ \hline
+Mobile Inf1 Roue & 0,3 & 80  & 24 	\\ \hline 
+Mobile Inf1 Pignon & 0,4 & 25 & 10	\\ \hline
+Mobile Inf2 Roue & 0,4 & 47   & 18,8	\\ \hline
+Mobile Inf2 Pignon & 0,4 & 12 & 4,8	\\ \hline
+Mobile Inf4 Roue & 0,4 & 58   & 23,2	\\ \hline
+Mobile Inf4 Pignon & 0,7 & 10 & 7	\\ \hline
+Roue de sortie & 0,7 & 36      & 25,2 \\ \hline
+\end{tabular}
+\end{center}
+\end{corrige}
+
+\else
+\subparagraph{}
+\textit{Dans le cas de l'axe de tangage, déterminer le diamètre de chaque roue dentée.}
+%
+%\begin{center}
+%\begin{tabular}{|l|c|c|c|}
+%\hline
+%Roue dentée & Module & Nb dents & Diamètre \\
+%\hline
+%& && \\ 
+%Pignon 03 20 & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Mobile Inf1 Roue & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Mobile Inf1 Pignon & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Mobile Inf2 Roue & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Mobile Inf2 Pignon & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Mobile Inf4 Roue & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Mobile Inf4 Pignon & && \\ 
+%&& & \\ \hline
+%&& & \\ 
+%Roue de sortie & && \\
+%&& & \\ 
+%\hline
+%\end{tabular}
+%\end{center}
+%\fi
+%
+%
+\subparagraph{}
+\textit{Dans le cas de l'axe de tangage, réaliser le schéma cinématique minimal.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Calculer le rapport de transmission de la chaîne de transmission de l'axe de tangage ? L'exigence 1.1.1.2 est-elle respectée ? Si non, quelle(s) solution(s) de remédiation pourrait-on proposer ?}
+\ifprof
+\begin{corrige}
+$$
+R_T = (-1)^n \dfrac{80\cdot 47 \cdot 58 \cdot 36}{20\cdot 25\cdot 12 \cdot 10 } = 130,85
+$$
+
+Ceci est inférieur à ce qui est préconisé par le cahier des charges. 
+
+Pour respecter le cahier des charges, on peut :
+\begin{itemize}
+\item choisir un autre moteur;
+\item changer le nombre de dents d'une des roues. Il suffirait pour cela que,  par exemple, la roue de sortie comporte 39 dents. 
+\end{itemize}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Calculer le rapport de transmission de la chaîne de transmission de l'axe de roulis ? L'exigence 1.1.1.1 est-elle respectée ? Si non, quelle(s) solution(s) de remédiation pourrait-on proposer ?}
+\ifprof
+\begin{corrige}
+Le rapport de transmission du second train est de 201,3 ce qui est compatible avec le cahier des charges.
+\end{corrige}
+\else
+\fi
+
+
+\section*{Exercice 2 -- Réducteur de roue motrice de chariot élévateur}
+\textit{D'après Florestan Mathurin}. 
+\setcounter{exo}{0}
+On s’intéresse au réducteur équipant la roue arrière motrice et directionnelle d’un chariot élévateur de manutention automoteur à conducteur non porté. 
+
+
+
+\begin{center}
+\includegraphics[width=.95\linewidth]{images/char_01}
+\end{center}
+
+
+\textbf{Données }: $z_{27} = \SI{16}{dents}$, $z_{35} = \SI{84}{dents}$, $z_{5} = \SI{14}{dents}$, $z_{11} = \SI{56}{dents}$, $z_{16} = \SI{75}{dents}$. 
+
+
+\subparagraph{}
+\textit{Identifier les classes d’équivalence cinématique sur le dessin d’ensemble. }
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/char_02}
+\end{center}
+
+
+\subparagraph{}
+\textit{ Construire le schéma cinématique du réducteur dans le même plan que le dessin.}
+\ifprof
+\begin{corrige}
+\begin{center}
+\includegraphics[width=\linewidth]{images/char_cor_01}
+\end{center}
+\end{corrige}
+\else
+\fi
+\subparagraph{}
+\textit{Compléter le tableau donnant les caractéristiques des roues et pignons.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\footnotesize
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Repère de  & Module  & Nombre & Diamètre primitif  \\
+la roue & $m$ (mm) & de dents $Z$ & $D$ (mm) \\
+\hline
+\hline
+27 & & & \\ \hline
+35 & 1,5& & \\ \hline
+5& & & \\ \hline
+11& 1,5 & & \\ \hline
+16& & & \\ \hline
+
+\end{tabular}
+\end{center}
+
+\normalsize
+
+\subparagraph{}
+\textit{Après avoir proposé un parmatrage, indiquer dans quel sens tourne la roue si le moteur 28 tourne dans le sens positif.}
+
+\subparagraph{}
+\textit{Pour une vitesse de \SI{1500}{tr/min} en sortie de moteur, déterminer la vitesse de rotation de la roue. Le diamètre de la roue est de \SI{150}{mm}. Quelle est la vitesse du véhicule ? }
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\section*{Exercice 3 -- Train épicycloïdal -- Type 1 -- Sécateur Pellenc}
+\setcounter{exo}{0}
+\textit{D'après ressources de Florestan Mathurin.}
+
+\begin{obj}~\\
+Vérifier les performances d'un réducteur.
+\end{obj}
+
+
+La période de taille de la vigne dure 2 mois environ. Les viticulteurs coupent 9 à 10 heures par jour. Ils répètent donc le même geste des millions de fois avec un sécateur. Les sociétés réalisant le du matériel agricole ont imaginé un sécateur électrique capable de réduire la fatigue de la main et du bras tout en laissant au viticulteur la commande de la coupe et sa liberté de mouvement. Le sécateur développé par la société Pellenc permet notamment de réaliser 60 coupes de diamètre 22 mm par minute. L’ensemble sécateur Pellenc est constitué d’un sécateur électronique, d’une mallette source d’énergie, d’une sacoche avec harnais et ceinture et d’un chargeur de batterie.
+
+%
+%\begin{center}
+% \includegraphics[width=.95\linewidth]{images/secateur1}
+%\end{center}
+
+
+Lorsque l’utilisateur appuie sur la gâchette, le moteur transmet par l’intermédiaire d’un réducteur à train épicycloïdal un mouvement de rotation à la vis à billes. L’écrou se déplace en translation par rapport à la vis et par l’intermédiaire d’une biellette met en rotation la lame mobile générant ainsi le mouvement de coupe. 
+
+\begin{center}
+ \includegraphics[width=.95\linewidth]{images/secateur2}
+\end{center}
+
+
+
+
+Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le rotor est lié au planétaire 1). La vis à billes liée au porte-satellite 4 tourne à la vitesse de rotation $N_4=350^; \text{tr/min}$. On note $Z_1$ le nombre dents du planétaire 1, $Z_2$ celui du satellite 2 et $Z_3$ celui de la couronne liée au bâti.
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/secateur3}
+\end{center}
+
+
+
+\subparagraph{}
+\textit{Déterminer alors le rapport de réduction du train épicycloïdal $\omega(4/0)/\omega(1/0)$ en fonction de $Z_1$ et $Z_3$.}
+ \ifprof
+ \begin{corrige}
+ \end{corrige}
+ \else
+ \fi
+ 
+\subparagraph{}
+\textit{Faire l’application numérique et déterminer une relation entre $Z_1$ et $Z_3$. Sachant que $Z_1=19$ en déduire $Z_3$.}
+ \ifprof
+ \begin{corrige}
+ \end{corrige}
+ \else
+ \fi
+ 
+\subparagraph{}
+\textit{Sachant que les roues dentées du train ont les mêmes modules, déterminer une relation géométrique entre les diamètres des éléments dentés $d_1$, $d_2$, $d_3$ puis en déduire une relation entre $Z_2$, $Z_1$, $Z_3$ (condition d’entraxe). Calculer la valeur de $Z_2$.}
+
+ \ifprof
+ \begin{corrige}
+ \end{corrige}
+ \else
+ \fi
+
+
+
+\section*{Exercice 4 -- Trains épicycloïdaux}
+\setcounter{exo}{0}
+\subparagraph{}
+\textit{Pour chacun des trains épicycloïdaux, numéroter les pièces et les roue dentées.}
+
+\subparagraph{}
+\textit{Pour chacun des trains épicycloïdaux, déterminer le rapport de transmission (rapport de réduction).}
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/epi_1}
+\end{center}
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/epi_2}
+\end{center}
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/epi_3}
+\end{center}
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/epi_4}
+\end{center}
+
+
+%
+%\section*{Exercice 6 -- Train épicycloïdal -- Type 3}
+%\setcounter{exo}{0}
+
+\section*{Exercice 5 -- Train épicycloïdal -- Type 4 -- Poulie Redex}
+\setcounter{exo}{0}
+
+\textit{D'après ressources de Stéphane Genouël.}
+
+
+\begin{obj}~\\
+Vérifier les performances d'un réducteur.
+\end{obj}
+
+Il existe 2 grandes familles de poulies Redex H ou SR, selon la forme de l’arbre central.
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/redex_01}
+\end{center}
+
+
+
+Le mouvement d’entrée est reçu par le boîtier tournant 5, entraîné par 5 courroies trapézoïdales 8, et guidé en rotation par rapport au bâti 18 à l’aide de deux roulements à billes 23 et 28. 
+Les flasques 16 permettent le montage des organes intérieurs. Ils sont munis de joints d’étanchéité 22 et 29. 
+Les trois axes 9, guidés en rotation par rapport au boîtier tournant 5 à l’aide de deux roulements à aiguilles 4 et 11, portent les trois satellites doubles 6-10.
+Les liaisons encastrements entre les axes 9 et les satellites 6 et 10 sont assurées (élastiquement) par de la matière plastique injectée entre les axes et les pignons préalablement dentelés (voir coupe A-A et B-B). 
+Les satellites 10 sont en prise avec le planétaire 24 (qui est en liaison encastrement avec le bâti 18 à l’aide d’un assemblage cannelé).
+Les satellites 6 sont en prise avec le planétaire 31 (qui est en liaison encastrement avec l’arbre de sortie 32 à l’aide d’un assemblage cannelé). Cet arbre de sortie 32 est guidé en rotation par rapport au bâti 18 à l’aide de deux roulements à aiguilles 19 et 21.
+
+
+
+\subparagraph{}
+\textit{Déterminer littéralement, en fonction des nombres de dents, la loi E/S du système (c'est-à-dire le rapport de transmission).}
+
+
+%
+%\begin{center}
+%\includegraphics[width=.8\textwidth]{images/fig_02}
+%\end{center}
+%
+%
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/redex_04}
+\end{center}
+
+
+
+
+\section*{Exercice 6 -- {Broyeur à cisailles rotatives}}
+\setcounter{exo}{0}
+\textit{D'après BTS CPI -- 2015.}
+
+\begin{obj}
+Vérifier les performances d'un réducteur.
+\end{obj}
+ECP Group est un fabricant européen spécialisé
+dans la conception et la construction de machines
+permettant la réduction du volume de ces D.I.B. au
+moyen de broyeurs, de compacteurs ou de presses,
+en favorisant la revalorisation, le recyclage ou le réemploi
+de matières.
+
+\begin{center}
+\includegraphics[width=.6\linewidth]{images/broyeur_01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/broyeur_04}
+\end{center}
+
+On donne un extrait du cahier des charges que doit respecter le broyeur.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/broyeur_06}
+\end{center}
+
+On donne le schéma cinématique du broyeur
+\begin{center}
+\includegraphics[width=\linewidth]{images/broyeur_05}
+\end{center}
+
+\subparagraph{}\textit{Donner les rapports de chacun des 4 étages de réduction.}
+
+
+\subparagraph{}\textit{Vérifier que les exigences 1.1 et 1.2 sont satisfaites.}
+
+\subparagraph{}\textit{Évaluer le couple de broyage sur chacun des axes.}
+
+
+
+\section*{Exercice 7 -- Centrifugeuse des boues d'une station d'épuration.}
+\setcounter{exo}{0}
+\textit{D'après concours CCP -- MP 2012.}
+
+\begin{obj} Déterminer la vitesse d'un moteur pour répondre au cahier des charges. 
+\end{obj}
+
+\footnotesize{
+\textit{Les boues sont constituées d’eau et de matière sèche. La siccité est le pourcentage massique de matière
+sèche. Ainsi, une boue avec une siccité de 10\% présente une humidité de 90\%. Afin
+d’incinérer les boues, il faut les déshydrater pour atteindre une siccité de 20\%. La déshydratation
+mécanique par centrifugation permet de séparer l’eau des matières sèches dans les boues.
+La centrifugation se base sur la différence de densité entre les matières sèches et l’eau présente dans
+cette boue. La boue arrive avec une certaine vitesse horizontale par un coté de la centrifugeuse. L’eau 
+traverse alors toute la centrifugeuse dans sa
+zone centrale tandis que les matières en suspension sont plaquées contre le tambour extérieur du fait
+de sa vitesse de rotation. Une vis intérieure, tournant dans le même sens que le tambour mais à une
+vitesse plus importante, vient alors récupérer les boues et les évacuer en sens inverse de l’eau jusqu’à
+la sortie latérale.}}
+
+
+\normalsize
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/centrifugeuse_02}
+\end{center}
+
+La boue visqueuse est cisaillée par la différence de vitesse entre la vis et le tambour (bol extérieur).
+La siccité de la boue est directement liée à cette différence de vitesse. On donne le diagramme des exigences partiel :
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/centrifugeuse_04}
+\end{center}
+
+
+La chaîne cinématique est représentée sur la figure
+suivante.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/centrifugeuse_03}
+\end{center}
+
+
+
+
+
+
+La séquence de lancement de la centrifugeuse se déroule en trois phases :
+\begin{itemize}
+\item mise en marche du premier moteur $M_{\text{tambour}}$ jusqu’à ce que le tambour 1 atteigne sa vitesse
+de consigne de 2 000 tours/min. Le moteur $M_{\text{rel}}$ est à l’arrêt;
+\item mise en marche du deuxième moteur $M_{\text{rel}}$ jusqu’à ce que la vitesse différentielle de
+2 tours/min soit atteinte entre le tambour 1 et la vis 3. La vis 3 tourne ainsi plus vite que le
+tambour 1;
+\item la boue liquide est ensuite introduite.
+\end{itemize}
+
+\subparagraph{}
+\textit{Déterminer la fréquence de rotation de la vis (par rapport au bâti) lors de la phase de lancement.}
+
+\subparagraph{}
+\textit{Déterminer alors la fréquence de rotation que doit avoir le moteur <<rel>> pour respecter l'exigence 1.1.}
+
+
+\newpage
+
+\section*{Exercice 8 -- Control'X -- Axe numérique asservi}
+\setcounter{exo}{0}
+
+\textit{ D'après documentation F. Mazet.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/cx_01}
+\end{center}
+
+\begin{obj} Établir la loi entrée-sortie du transmetteur de mouvement. 
+\end{obj}
+
+
+On s'intéresse à la chaîne de transmission de puissance du Control'X dont un modèle est donné dans la figure ci-dessous.
+
+On note : 
+\begin{itemize}
+\item \textbf{0:} le bâti auquel est encastré une couronne de rayon primitif $R_b$;
+\item \textbf{1:} le pignon de sortie du moteur de rayon primitif $R_m$;
+\item \textbf{2:} un des 3 satellites du réducteur épicycloïdal de rayon primitif $R_s$;
+\item \textbf{3:} le porte-satellite auquel est encastré une poulie de rayon $R_p$;
+\item \textbf{5:} le chariot de masse $M$ encastré à la courroie \textbf{4} considérée inextensible. On note $v=\vectv{D}{5}{0}\cdot \vect{y}$;
+\item \textbf{3:} le seconde poulie de rayon $R_p$;
+\end{itemize}
+%La fréquence de rotation du moteur Man est de 1900 tr/min.
+\subparagraph{}
+\textit{Déterminer la relation entre $\omega(1/0)$ et $v$.}
+
+
+
+\ifprof
+\begin{corrige}
+On cherche une relation entre $\omega_{\text{Mh}/0}$, $\omega_{\text{Ph}/0}$ et $\omega_{\text{Mm}/0}$ (avec Mm et 4 même classe d'équivalence). Pour cela, on va d'abord rechercher une relation entre $\omega(3/0)$, $\omega(4/0)$ et $\omega(1/0)$.
+
+Bloquons le porte satellite 4, directement lié au moteur Mm. On est alors en présence d'un réducteur simple d'entrée  $\omega(1/4)$ et de sortie $\omega(3/4)$. On a donc : 
+$\dfrac{\omega(3/4)}{\omega(1/4)} = -\dfrac{R_{12}}{R_{32}}$. 
+
+En libérant le porte satellite, on a donc :
+$ \dfrac{\omega(3/4)}{\omega(1/4)}
+= \dfrac{\omega(3/0)-\omega(4/0)}{\omega(1/0)-\omega(4/0)}
+= -\dfrac{R_{12}}{R_{32}}
+\Leftrightarrow 
+R_{32} \omega(3/0) +R_{12}\omega(1/0) = \omega(4/0)\left(R_{12}+R_{32}\right)$
+
+On a donc, $R_{32} \omega(3/0) +R_{12}\omega(1/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right)$.
+
+Par ailleurs, $\dfrac{\omega(\text{Ph}/0)}{\omega(3/0)} = -\dfrac{R_{3P}}{R_P}$ et 
+$\dfrac{\omega(1/0)}{\omega(\text{Mh}/0)} = -\dfrac{R_M}{R_{1M}}$.
+
+On a donc, $ \dfrac{2y}{x} \omega(Mh/0)= -\omega(3/0)\dfrac{R_{3P}}{R_P} \Leftrightarrow  \omega(3/0) = -\dfrac{2y}{x} \dfrac{R_P}{R_{3P}}\omega(Mh/0)$.
+
+En utilisant la relation du train épi :
+On a donc, $-R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}\omega(Mh/0)  -R_{12} \dfrac{R_M}{R_{1M}} \omega(\text{Mh}/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right) \Leftrightarrow \left(-R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}  -R_{12} \dfrac{R_M}{R_{1M}} \right)\omega(\text{Mh}/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right)$.
+
+
+$\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{R_{12}+R_{32}}{R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}  +R_{12} \dfrac{R_M}{R_{1M}}}$
+
+$\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{\left( R_{12}+R_{32}\right)R_{1M} R_{3P}x }{R_{32} 2y R_PR_{1M} + R_{3P}xR_{12} R_M}$
+\end{corrige}
+\else
+\fi
+
+ 
+\begin{center}
+\includegraphics[width=\linewidth]{images/cx_02}
+\end{center}
+
+\section*{Exercice 9 -- Transmission à variation continue -- Vario Fendt}
+\setcounter{exo}{0}
+
+\textit{D'après concours CCP -- MP 2008.}
+
+\begin{obj} 
+Établir les relations cinématiques dans une transmission mécanique de tracteur.
+\end{obj}
+
+
+On s'intéresse à la chaîne de transmission de puissance d'un tracteur Fendt. Cette dernière est composée d'un moteur (et d'une pompe) hydraulique (Mh) ainsi que d'un moteur thermique MAN (Mm). 
+
+Le moteur MAN a pour but de fournir de la puissance à la pompe hydraulique et au tracteur (récepteur R). On donne ci-dessous le schéma de la transmission. 
+ 
+\begin{center}
+\includegraphics[width=\linewidth]{images/fendt_02}
+\end{center}
+
+Les rayons des pignons sont les suivants : $R_{12}=60$, $R_{1M}=33$, $R_{2}=30$, $R_{32}=120$, $R_{3P}=54$, $R_{M}=54$, $R'_{M}=48$, $R_{R}=42$, $R'_{R}=48$. 
+
+Une étude antérieure a permis d'établir que $\dfrac{\omega(Ph/0)}{\omega(Mh/0)} = \dfrac{2y}{x}$ avec $x\in[0,71;1]$ et $y\in[0;1]$.
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fendt_03}
+%\end{center}
+
+La fréquence de rotation du moteur Man est de 1900 tr/min.
+\subparagraph{}
+\textit{Déterminer la relation entre $\omega(1/0)$, $\omega(3/0)$ et $\omega(4/0)$}
+
+\subparagraph{}
+\textit{Montrer que la relation entre la rotation du moteur hydraulique et le moteur Man peut se mettre sous la forme : $\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{Ax}{BR_py + Cx}$ où on explicitera $A$, $B$ et $C$.}
+
+
+\ifprof
+\begin{corrige}
+On cherche une relation entre $\omega_{\text{Mh}/0}$, $\omega_{\text{Ph}/0}$ et $\omega_{\text{Mm}/0}$ (avec Mm et 4 même classe d'équivalence). Pour cela, on va d'abord rechercher une relation entre $\omega(3/0)$, $\omega(4/0)$ et $\omega(1/0)$.
+
+Bloquons le porte satellite 4, directement lié au moteur Mm. On est alors en présence d'un réducteur simple d'entrée  $\omega(1/4)$ et de sortie $\omega(3/4)$. On a donc : 
+$\dfrac{\omega(3/4)}{\omega(1/4)} = -\dfrac{R_{12}}{R_{32}}$. 
+
+En libérant le porte satellite, on a donc :
+$ \dfrac{\omega(3/4)}{\omega(1/4)}
+= \dfrac{\omega(3/0)-\omega(4/0)}{\omega(1/0)-\omega(4/0)}
+= -\dfrac{R_{12}}{R_{32}}
+\Leftrightarrow 
+R_{32} \omega(3/0) +R_{12}\omega(1/0) = \omega(4/0)\left(R_{12}+R_{32}\right)$
+
+On a donc, $R_{32} \omega(3/0) +R_{12}\omega(1/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right)$.
+
+Par ailleurs, $\dfrac{\omega(\text{Ph}/0)}{\omega(3/0)} = -\dfrac{R_{3P}}{R_P}$ et 
+$\dfrac{\omega(1/0)}{\omega(\text{Mh}/0)} = -\dfrac{R_M}{R_{1M}}$.
+
+On a donc, $ \dfrac{2y}{x} \omega(Mh/0)= -\omega(3/0)\dfrac{R_{3P}}{R_P} \Leftrightarrow  \omega(3/0) = -\dfrac{2y}{x} \dfrac{R_P}{R_{3P}}\omega(Mh/0)$.
+
+En utilisant la relation du train épi :
+On a donc, $-R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}\omega(Mh/0)  -R_{12} \dfrac{R_M}{R_{1M}} \omega(\text{Mh}/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right) \Leftrightarrow \left(-R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}  -R_{12} \dfrac{R_M}{R_{1M}} \right)\omega(\text{Mh}/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right)$.
+
+
+$\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{R_{12}+R_{32}}{R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}  +R_{12} \dfrac{R_M}{R_{1M}}}$
+
+$\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{\left( R_{12}+R_{32}\right)R_{1M} R_{3P}x }{R_{32} 2y R_PR_{1M} + R_{3P}xR_{12} R_M}$
+\end{corrige}
+\else
+\fi
+%
+%\section*{Exercice 8 -- Poulies -- courroies}
+%\setcounter{exo}{0}
+%
+%\section*{Exercice 9 -- Roulement sans glissement}
+%\setcounter{exo}{0}
 
 \section*{Exercice 10 -- Transmission vis -- écrou}
+\textit{D'après ressources Pole Chateaubriand -- Joliot-Curie.}
+\setcounter{exo}{0}
+
+La conduite en ville nécessite des répétitions
+fréquentes de la manœuvre d’embrayage /
+débrayage. Pour améliorer le confort de conduite,
+on peut substituer la force musculaire du
+conducteur par une commande électrique de
+l’embrayage. Dans ce cas, il devient nécessaire de
+renseigner l’unité de contrôle électronique sur les
+intentions du conducteur à partir d’un capteur de
+position placé sur la pédale d’embrayage.
+L’automatisation de la fonction embrayage
+permet de corriger les éventuelles fausses
+manœuvres du conducteur, d’assurer la fonction
+anti-calage du moteur et de participer aux
+fonctions d’anti-patinage et d’anti-blocage des
+roues.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/rest_01}
+\end{center}
 
 
+En cas d’utilisation de la pédale, il faut recréer les sensations
+au conducteur, c'est-à-dire une résistance mécanique proche
+de celle d’une commande mécanique classique. Pour réaliser
+ce système de retour d’effort la solution peut être passive (un
+ressort, par exemple) ou utiliser un système actif (à l’aide d’un
+actionneur électrique), objet de l’étude.
+L’étude porte sur un démonstrateur de restituteur actif
+d’effort à la pédale. Le démonstrateur permet de tester
+différentes lois de restitution d’effort pour rechercher la plus
+ergonomique. Le système contrôle, par l’intermédiaire d’un
+piston, l’effort sur la tige de poussée de la pédale.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/rest_02}
+\end{center}
+
+Le schéma du restituteur actif est donné ci-dessous. Le pas de la vis est $p_v =\SI{10}{mm}$.
+Le diamètre de la poulie 2 est le double de celui de la poulie 1. 
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/rest_03}
+\end{center}
+
+\begin{obj}
+Déterminer la première partie
+de la loi entrée/sortie en vitesse du
+système.
+\end{obj}
+
+\subparagraph{}
+\textit{Sur le schéma cinématique, repasser chaque solide d’une couleur différente.}
+
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Compléter la chaîne d’énergie-puissance partielle en définissant les noms des transmetteurs et les grandeurs
+d’entrée et de sortie cinématiques.}
+
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/rest_04}
+\end{center}
+
+\subparagraph{}
+\textit{Définir la loi entrée-sortie entre la vitesse de translation du piston 3 et la vitesse de rotation du moteur~1. }
+
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\section*{Exercice 11 -- Axe de machine-outil à commande numérique}
+\textit{D'après ressources Pole Chateaubriand -- Joliot-Curie.}
+\setcounter{exo}{0}
+L’usinage est une opération de transformation d’un produit par enlèvement de matière.
+Cette opération est à la base de la fabrication de produits dans les industries mécaniques.
+La génération d’une surface par enlèvement de matière est obtenue grâce à un outil muni
+d’au moins une arête coupante. Les différentes formes de pièces sont obtenues par des
+translations et des rotations de l'outil par rapport à la pièce.
+
+\begin{center}
+\includegraphics[width=.6\linewidth]{images/ugv_01}
+\end{center}
+
+On s’intéresse ici à l’axe Y qui met en mouvement le coulisseau 1,
+sur lequel est fixée l’outil, par rapport au bâti 0. Le coulisseau 1 est mis en mouvement par un moteur
+électrique qui délivre un couple moteur $C_m(t)$.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/ugv_02}
+\end{center}
+
+On note $p$ le pas de vis. 
+
+
+\subparagraph{}
+\textit{Définir la loi entrée-sortie entre la vitesse de translation du coulisseau et la vitesse de rotation du moteur. }
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\section*{Exercice 12 -- Treuil de levage}
+\textit{D'après ressources Pole Chateaubriand -- Joliot-Curie.}
+\setcounter{exo}{0}
+
+On s’intéresse à un treuil dont la photo et le modèle cinématique sont donnés ci-dessous.
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/treuil_01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/treuil_02}
+\end{center}
+
+On note $Z_2$ le nombre de dents de la roue dentée de l'arbre 2. On note l'arbre intermédiaire 3 et $Z_{3a}$ et $Z_{3b}$ les nombres de dents de ses deux roues dentées. On note $R$ le rayon du tambour 4 sur lequel s’enroule sans glisser un câble et $Z_4$ le nombre de dents de sa roue dentée.
+
+
+\subparagraph{}
+\textit{Déterminer la relation entre $v_{51}$ la vitesse de déplacement de la charge par rapport au bâti et $\omega_{21}$ la vitesse de
+rotation du moteur.}
 \ifprof
 %\end{multicols}
 \else
 \end{multicols}
 \fi
 
-\end{document}	
+\end{document}
+
+\subparagraph{}
+\textit{}
+
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+	
