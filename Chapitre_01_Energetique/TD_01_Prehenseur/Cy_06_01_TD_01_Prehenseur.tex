@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -108,6 +108,9 @@ Le cahier des charges impose que la vitesse maximale du chariot sur l’axe $\ve
 \end{obj}
 
 \subsection*{Travail demandé}
+
+\ifprof
+\else
 La transmission est réalisée de la façon suivante. L'arbre 1 est entrainé par un moto-réducteur dont le raport de réduction est noté $r$. 
 
 \begin{center}
@@ -126,6 +129,7 @@ La transmission est réalisée de la façon suivante. L'arbre 1 est entrainé pa
 \item $C_r = \SI{0,15}{Nm}$ : couple de frottements secs dans les liaisons ramené à l’arbre moteur;
 \item $\mu = \SI{0,001}{N.m.s.rad^{-1}}$ : coefficient de frottements visqueux dans les liaisons ramené à l’arbre moteur.
 \end{itemize}
+\fi
 
 \subparagraph{}\textit{Déterminer la vitesse maximale de rotation du moteur $\Omega_{\text{max}}$. Faire l’application numérique.}
 \ifprof
