@@ -12,6 +12,10 @@
 \fichetrue
 %\fichefalse
 
+\newif\ifcolle
+
+\colletrue
+
 \proftrue
 \proffalse
 
@@ -156,8 +160,8 @@ Remarque : Dans la suite, toutes les vitesses sont définies par rapport au bât
 
 \textbf{Modélisation simplifiée du problème}
 \begin{itemize}
-\item La vitesse de rotation du rotor moteur M4 par rapport à son stator fixe (lié au bâti \textbf{(0)}) est notée $\omega_m(t)\vect{x_0}$  où $\omega_m(t)=\dfrac{\dd \theta_m(t)}{\dd t}$  (vitesse de rotation avant réduction).
-\item La poulie motrice a un rayon $R_i$ et tourne à la vitesse $\omega_i(t)$ (vitesse de rotation après réduction).
+\item La vitesse de rotation du rotor moteur M4 par rapport à son stator fixe (lié au bâti \textbf{(0)}) est notée $\omega_m(t)\vect{x_0}$  où $\omega_m(t)=\dfrac{\dd \theta_m(t)}{\dd t}$  (vitesse de rotation avant réduction de rapport $r$).
+\item La poulie motrice a un rayon $R_i$ et tourne à la vitesse $\omega_i(t)$ (vitesse de rotation après réduction de rapport $r$).
 \item La poulie réceptrice a un rayon $R_e$ et tourne à la vitesse $\omega_e(t)$.
 \item Les deux pignons en contact ont même rayon primitif, supposé égal à $R_e$.
 \item Le couple du stator sur le rotor moteur M4 est noté  $\vect{C_m}=C_m \vect{x_0}$.
@@ -292,6 +296,8 @@ $C_e(t) = k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t)$.
 
 \ifprof
 \else
+\ifcolle
+\else
 \subsubsection*{Corrigé résumé}
 \begin{enumerate}
 \item $v(t)=R_g r \dfrac{R_i}{R_e}\omega_m(t)$ et $z(t)=R_g r \dfrac{R_i}{R_e}\theta_m(t)$. 
@@ -303,6 +309,7 @@ $\mathcal{P}_{\text{int}}\left(E\right)=0$.
 %\item $J\dot{\omega}_m(t) = -k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t) +C_m$.
 \item $C_e(t) = k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t)$.
 \end{enumerate}
+\fi
 \fi
 
 \ifprof
