@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -44,7 +44,7 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{20}
 %\def\xxonglet{Part. 1 -- Ch. 3}
-\def\xxonglet{Cycle 06}
+\def\xxonglet{\textsf{Cycle 06}}
 
 \def\xxactivite{Application}
 \def\xxauteur{\textsl{X. Pessoles}}
@@ -93,7 +93,7 @@ Chapitre 1 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
-%\begin{multicols}{2}
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -109,26 +109,88 @@ Soit le train d'engrenages suivant.
 
 \subparagraph{}
 \textit{Déterminer $\dfrac{\omega_{3/0}}{\omega_{1/0}}$ en fonction du nombre de dents des roues dentées.}
+\ifprof
+\begin{corrige}
+On a $\dfrac{\omega_{3/0}}{\omega_{1/0}}=-\dfrac{Z_1}{Z_3}$.
+\end{corrige}
+\else
+\fi
+
 \subparagraph{}
-\textit{Donner une relatiu}.
+\textit{Donner une relation géométrique entre $Z_1$, $Z_2$ et $Z_3$ permettant de garantir le fonctionnement du train d'engrenages. }
+\ifprof
+\begin{corrige}
+On a $Z_3 = 2Z_2 + Z_1$.
+\end{corrige}
+\else
+\fi
 
 
 
+
+Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_02}
 \end{center}
 
+\subparagraph{}
+\textit{Déterminer $\dfrac{\omega_{4/0}}{\omega_{1/0}}$ en fonction du nombre de dents des roues dentées.}
+\ifprof
+\begin{corrige}
+On a $\dfrac{\omega_{4/0}}{\omega_{1/0}}=-\dfrac{Z_1Z_{22}}{Z_4Z_{21}}$.
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Donner une relation géométrique entre $Z_1$, $Z_{21}$, $Z_{22}$ et $Z_4$ permettant de garantir le fonctionnement du train d'engrenages. }
+\ifprof
+\begin{corrige}
+On a $Z_1+Z_{21}+Z_{22}= Z_4$.
+\end{corrige}
+\else
+\fi
+
+
+
+
+Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_03}
 \end{center}
 
+
+
+\subparagraph{}
+\textit{Déterminer $\dfrac{\omega_{4/0}}{\omega_{1/0}}$ en fonction du nombre de dents des roues dentées.}
+\ifprof
+\begin{corrige}
+On a $\dfrac{\omega_{4/0}}{\omega_{1/0}}=\dfrac{Z_1Z_{22}}{Z_4Z_{21}}$.
+\end{corrige}
+\else
+\fi
+
+
+Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_04}
 \end{center}
 
 
 
-\section*{Exercice 1 -- Train d'engrenages (cheville NAO)}
+\subparagraph{}
+\textit{Déterminer $\dfrac{\omega_{4/0}}{\omega_{1/0}}$ en fonction du nombre de dents des roues dentées.}
+\ifprof
+\begin{corrige}
+On a $\dfrac{\omega_{4/0}}{\omega_{1/0}}=\dfrac{Z_1Z_{22}}{Z_4Z_{21}}$.
+\end{corrige}
+\else
+\fi
+
+
+
+
+\section*{Exercice 2 -- Train d'engrenages (cheville NAO)}
 \setcounter{exo}{0}
 
 
@@ -141,6 +203,7 @@ On s'intéresse ici à la cheville NAO. On cherche à savoir si, à partir du mo
 \end{itemize}
 
 \end{obj}
+
 
 
 \begin{center}
@@ -184,6 +247,10 @@ Pour la chaîne de transmission du roulis on donne le nombre de dents et le modu
 \end{center}
 
 
+\ifprof
+\newpage
+\else
+\fi
 
 
 \subparagraph{}
@@ -203,9 +270,9 @@ D'après le diagramme de définition des blocs et le diagramme des exigences, le
 \ifprof
 \subparagraph{}
 \textit{Dans le cas de l'axe de tangage, remplir le tableau suivant :}
-\begin{corrige}
+\begin{corrige} ~\\
 \begin{center}
-\begin{tabular}{|l|c|c|c|}
+\begin{tabular}{|p{1.7cm}|c|c|p{1.3cm}|}
 \hline
 Roue dentée & Module & Nb dents & Diamètre (mm)\\
 \hline
@@ -220,8 +287,9 @@ Roue de sortie & 0,7 & 36      & 25,2 \\ \hline
 \end{tabular}
 \end{center}
 \end{corrige}
-
 \else
+\fi
+
 \subparagraph{}
 \textit{Dans le cas de l'axe de tangage, déterminer le diamètre de chaque roue dentée.}
 %
@@ -437,27 +505,59 @@ Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le ro
 
 \section*{Exercice 4 -- Trains épicycloïdaux}
 \setcounter{exo}{0}
+
+Soit le train épicycloïdal suivant. 
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/TrainEpi_01.png}
+\end{center}
+
 \subparagraph{}
-\textit{Pour chacun des trains épicycloïdaux, numéroter les pièces et les roue dentées.}
+\textit{Déterminer le rapport de réduction $\dfrac{\omega_{30}}{\omega_{10}}$.}
+
+
+Soit le train épicycloïdal suivant. 
+
+\begin{center}
+ \includegraphics[width=.6\linewidth]{images/TrainEpi_02.png}
+\end{center}
 
 \subparagraph{}
-\textit{Pour chacun des trains épicycloïdaux, déterminer le rapport de transmission (rapport de réduction).}
+\textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
+
+\subparagraph{}
+\textit{On suppose que $\omega_{40}$ est bloqué. Exprimer le rapport $\dfrac{\omega_{30}}{\omega_{10}}$.}
+
+
+
+
+
+Soit le train épicycloïdal suivant. 
 
 \begin{center}
- \includegraphics[width=.6\linewidth]{images/epi_1}
+ \includegraphics[width=.6\linewidth]{images/TrainEpi_03.png}
 \end{center}
 
-\begin{center}
- \includegraphics[width=.6\linewidth]{images/epi_2}
-\end{center}
+\subparagraph{}
+\textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
+
+\subparagraph{}
+\textit{On suppose que $\omega_{40}$ est bloqué. Exprimer le rapport $\dfrac{\omega_{30}}{\omega_{10}}$.}
+
+
+
+Soit le train épicycloïdal suivant. 
 
 \begin{center}
- \includegraphics[width=.6\linewidth]{images/epi_3}
+ \includegraphics[width=.6\linewidth]{images/TrainEpi_04.png}
 \end{center}
 
-\begin{center}
- \includegraphics[width=.6\linewidth]{images/epi_4}
-\end{center}
+\subparagraph{}
+\textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
+
+\subparagraph{}
+\textit{On suppose que $\omega_{40}$ est bloqué. Exprimer le rapport $\dfrac{\omega_{30}}{\omega_{10}}$.}
+
 
 
 %
@@ -610,6 +710,8 @@ tambour 1;
 \item la boue liquide est ensuite introduite.
 \end{itemize}
 
+
+
 \subparagraph{}
 \textit{Déterminer la fréquence de rotation de la vis (par rapport au bâti) lors de la phase de lancement.}
 
@@ -617,7 +719,7 @@ tambour 1;
 \textit{Déterminer alors la fréquence de rotation que doit avoir le moteur <<rel>> pour respecter l'exigence 1.1.}
 
 
-\newpage
+
 
 \section*{Exercice 8 -- Control'X -- Axe numérique asservi}
 \setcounter{exo}{0}
@@ -651,32 +753,7 @@ On note :
 
 \ifprof
 \begin{corrige}
-On cherche une relation entre $\omega_{\text{Mh}/0}$, $\omega_{\text{Ph}/0}$ et $\omega_{\text{Mm}/0}$ (avec Mm et 4 même classe d'équivalence). Pour cela, on va d'abord rechercher une relation entre $\omega(3/0)$, $\omega(4/0)$ et $\omega(1/0)$.
 
-Bloquons le porte satellite 4, directement lié au moteur Mm. On est alors en présence d'un réducteur simple d'entrée  $\omega(1/4)$ et de sortie $\omega(3/4)$. On a donc : 
-$\dfrac{\omega(3/4)}{\omega(1/4)} = -\dfrac{R_{12}}{R_{32}}$. 
-
-En libérant le porte satellite, on a donc :
-$ \dfrac{\omega(3/4)}{\omega(1/4)}
-= \dfrac{\omega(3/0)-\omega(4/0)}{\omega(1/0)-\omega(4/0)}
-= -\dfrac{R_{12}}{R_{32}}
-\Leftrightarrow 
-R_{32} \omega(3/0) +R_{12}\omega(1/0) = \omega(4/0)\left(R_{12}+R_{32}\right)$
-
-On a donc, $R_{32} \omega(3/0) +R_{12}\omega(1/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right)$.
-
-Par ailleurs, $\dfrac{\omega(\text{Ph}/0)}{\omega(3/0)} = -\dfrac{R_{3P}}{R_P}$ et 
-$\dfrac{\omega(1/0)}{\omega(\text{Mh}/0)} = -\dfrac{R_M}{R_{1M}}$.
-
-On a donc, $ \dfrac{2y}{x} \omega(Mh/0)= -\omega(3/0)\dfrac{R_{3P}}{R_P} \Leftrightarrow  \omega(3/0) = -\dfrac{2y}{x} \dfrac{R_P}{R_{3P}}\omega(Mh/0)$.
-
-En utilisant la relation du train épi :
-On a donc, $-R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}\omega(Mh/0)  -R_{12} \dfrac{R_M}{R_{1M}} \omega(\text{Mh}/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right) \Leftrightarrow \left(-R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}  -R_{12} \dfrac{R_M}{R_{1M}} \right)\omega(\text{Mh}/0) = \omega(\text{Mm}/0)\left(R_{12}+R_{32}\right)$.
-
-
-$\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{R_{12}+R_{32}}{R_{32} \dfrac{2y}{x} \dfrac{R_P}{R_{3P}}  +R_{12} \dfrac{R_M}{R_{1M}}}$
-
-$\dfrac{\omega(Mh/0)}{\omega(Mm/0)}=-\dfrac{\left( R_{12}+R_{32}\right)R_{1M} R_{3P}x }{R_{32} 2y R_PR_{1M} + R_{3P}xR_{12} R_M}$
 \end{corrige}
 \else
 \fi
@@ -720,6 +797,7 @@ La fréquence de rotation du moteur Man est de 1900 tr/min.
 
 
 \ifprof
+\newpage
 \begin{corrige}
 On cherche une relation entre $\omega_{\text{Mh}/0}$, $\omega_{\text{Ph}/0}$ et $\omega_{\text{Mm}/0}$ (avec Mm et 4 même classe d'équivalence). Pour cela, on va d'abord rechercher une relation entre $\omega(3/0)$, $\omega(4/0)$ et $\omega(1/0)$.
 
@@ -900,8 +978,9 @@ On note $Z_2$ le nombre de dents de la roue dentée de l'arbre 2. On note l'arbr
 \subparagraph{}
 \textit{Déterminer la relation entre $v_{51}$ la vitesse de déplacement de la charge par rapport au bâti et $\omega_{21}$ la vitesse de
 rotation du moteur.}
+
 \ifprof
-%\end{multicols}
+\end{multicols}
 \else
 \end{multicols}
 \fi
