@@ -365,8 +365,10 @@ Le rapport de transmission du second train est de 201,3 ce qui est compatible av
 \fi
 
 
-\section*{Exercice 2 -- Réducteur de roue motrice de chariot élévateur}
-\textit{D'après Florestan Mathurin}. 
+\section*{Exercice 3 -- Réducteur de roue motrice de chariot élévateur}
+\textit{D'après Florestan Mathurin.}
+
+
 \setcounter{exo}{0}
 On s’intéresse au réducteur équipant la roue arrière motrice et directionnelle d’un chariot élévateur de manutention automoteur à conducteur non porté. 
 
@@ -399,7 +401,7 @@ On s’intéresse au réducteur équipant la roue arrière motrice et directionn
 \ifprof
 \begin{corrige}
 \begin{center}
-\includegraphics[width=\linewidth]{images/char_cor_01}
+\includegraphics[width=\linewidth]{images/char_cor_01_BIS}
 \end{center}
 \end{corrige}
 \else
@@ -408,10 +410,26 @@ On s’intéresse au réducteur équipant la roue arrière motrice et directionn
 \textit{Compléter le tableau donnant les caractéristiques des roues et pignons.}
 \ifprof
 \begin{corrige}
+\footnotesize
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Repère de  & Module  & Nombre & Diamètre primitif  \\
+la roue & $m$ (mm) & de dents $Z$ & $D$ (mm) \\
+\hline
+\hline
+27 & 1,5 &16 & 24\\ \hline
+35 & 1,5 &84 & 126\\ \hline
+5   &1,5 &14 & 21\\ \hline
+11 & 1,5 & 56 & 84 \\ \hline
+16 &  1,5&  75& 112,5\\ \hline
+
+\end{tabular}
+\end{center}
+
+\normalsize
 \end{corrige}
 \else
-\fi
-
 \footnotesize
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
@@ -430,19 +448,35 @@ la roue & $m$ (mm) & de dents $Z$ & $D$ (mm) \\
 \end{center}
 
 \normalsize
+\fi
+
+
 
 \subparagraph{}
-\textit{Après avoir proposé un parmatrage, indiquer dans quel sens tourne la roue si le moteur 28 tourne dans le sens positif.}
+\textit{Après avoir proposé un paramétrage, indiquer dans quel sens tourne la roue si le moteur 28 (31) tourne dans le sens positif.}
+
+\ifprof
+\begin{corrige}
+Voir figure précédente. Si le moteur tourne dans le sens positif, la roue tourne dans le sens négatif. 
+\end{corrige}
+\else
+\fi
 
 \subparagraph{}
 \textit{Pour une vitesse de \SI{1500}{tr/min} en sortie de moteur, déterminer la vitesse de rotation de la roue. Le diamètre de la roue est de \SI{150}{mm}. Quelle est la vitesse du véhicule ? }
 \ifprof
 \begin{corrige}
+Le rapport de réduction de la transmission est le suivant : 
+$k=\dfrac{Z_{27} Z_{5} Z_{11} }{Z_{35} Z_{11} Z_{16}} = \dfrac{16\cdot 14}{84\cdot 75} =0,0355 $
+
+La vitesse de rotation de la roue est donc de $\SI{53,33}{tr.min^{-1}}$ soit \SI{5,59}{rad.s^{-1}}. 
+On en déduit la vitesse du véhicule : $5,59 \times 0,15 = \SI{0,84}{m.s^{-1}}\simeq \SI{3}{km.h^{-1}}$.
+
 \end{corrige}
 \else
 \fi
 
-\section*{Exercice 3 -- Train épicycloïdal -- Type 1 -- Sécateur Pellenc}
+\section*{Exercice 4 -- Train épicycloïdal -- Type 1 -- Sécateur Pellenc}
 \setcounter{exo}{0}
 \textit{D'après ressources de Florestan Mathurin.}
 
@@ -724,7 +758,8 @@ tambour 1;
 \section*{Exercice 8 -- Control'X -- Axe numérique asservi}
 \setcounter{exo}{0}
 
-\textit{ D'après documentation F. Mazet.}
+\textit{ D'après documentation F. Mazet.} \\
+
 
 \begin{center}
 \includegraphics[width=\linewidth]{images/cx_01}
