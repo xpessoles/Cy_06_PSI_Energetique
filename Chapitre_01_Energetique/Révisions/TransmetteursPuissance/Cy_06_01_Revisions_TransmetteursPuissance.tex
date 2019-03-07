@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -102,10 +102,13 @@ Chapitre 1 -- \xxactivite%
 \section*{Exercice 1 -- Train d'engrenages simple}
 \setcounter{exo}{0}
 
+\ifprof
+\else
 Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_01}
 \end{center}
+\fi
 
 \subparagraph{}
 \textit{Déterminer $\dfrac{\omega_{3/0}}{\omega_{1/0}}$ en fonction du nombre de dents des roues dentées.}
@@ -127,11 +130,13 @@ On a $Z_3 = 2Z_2 + Z_1$.
 
 
 
-
+\ifprof
+\else
 Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_02}
 \end{center}
+\fi
 
 \subparagraph{}
 \textit{Déterminer $\dfrac{\omega_{4/0}}{\omega_{1/0}}$ en fonction du nombre de dents des roues dentées.}
@@ -153,12 +158,13 @@ On a $Z_1+Z_{21}+Z_{22}= Z_4$.
 
 
 
-
+\ifprof
+\else
 Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_03}
 \end{center}
-
+\fi
 
 
 \subparagraph{}
@@ -171,11 +177,13 @@ On a $\dfrac{\omega_{4/0}}{\omega_{1/0}}=\dfrac{Z_1Z_{22}}{Z_4Z_{21}}$.
 \fi
 
 
+\ifprof
+\else
 Soit le train d'engrenages suivant. 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/TrainSimple_04}
 \end{center}
-
+\fi
 
 
 \subparagraph{}
@@ -194,6 +202,8 @@ On a $\dfrac{\omega_{4/0}}{\omega_{1/0}}=\dfrac{Z_1Z_{22}}{Z_4Z_{21}}$.
 \setcounter{exo}{0}
 
 
+\ifprof
+\else
 NAO est un robot humanoïde conçu par la société française Aldebaran. À l'origine il a été conçu comme prototype du robot Romeo, destiné à être au service des personnes. NAO est utilisé à l'heure actuelle dans la recherche en robotique et dans des domaines pédagogiques. 
 \begin{obj}
 On s'intéresse ici à la cheville NAO. On cherche à savoir si, à partir du moteur retenu par le constructeur, la chaîne de transmission de puissance permet de vérifier les exigences suivantes : 
@@ -245,12 +255,8 @@ Pour la chaîne de transmission du roulis on donne le nombre de dents et le modu
 \begin{center}
 \includegraphics[width=.8\linewidth]{images/nao_03}
 \end{center}
-
-
-\ifprof
-\newpage
-\else
 \fi
+
 
 
 \subparagraph{}
@@ -367,9 +373,11 @@ Le rapport de transmission du second train est de 201,3 ce qui est compatible av
 
 \section*{Exercice 3 -- Réducteur de roue motrice de chariot élévateur}
 \textit{D'après Florestan Mathurin.}
-
-
 \setcounter{exo}{0}
+
+\ifprof
+\else
+
 On s’intéresse au réducteur équipant la roue arrière motrice et directionnelle d’un chariot élévateur de manutention automoteur à conducteur non porté. 
 
 
@@ -381,6 +389,7 @@ On s’intéresse au réducteur équipant la roue arrière motrice et directionn
 
 \textbf{Données }: $z_{27} = \SI{16}{dents}$, $z_{35} = \SI{84}{dents}$, $z_{5} = \SI{14}{dents}$, $z_{11} = \SI{56}{dents}$, $z_{16} = \SI{75}{dents}$. 
 
+\fi
 
 \subparagraph{}
 \textit{Identifier les classes d’équivalence cinématique sur le dessin d’ensemble. }
@@ -480,6 +489,9 @@ On en déduit la vitesse du véhicule : $5,59 \times 0,15 = \SI{0,84}{m.s^{-1}}\
 \setcounter{exo}{0}
 \textit{D'après ressources de Florestan Mathurin.}
 
+\ifprof
+\else
+
 \begin{obj}~\\
 Vérifier les performances d'un réducteur.
 \end{obj}
@@ -508,12 +520,18 @@ Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le ro
  \includegraphics[width=.6\linewidth]{images/secateur3}
 \end{center}
 
-
+\fi
 
 \subparagraph{}
 \textit{Déterminer le rapport de réduction du train épicycloïdal $\dfrac{\omega(4/0)}{\omega(1/0)}$ en fonction de $Z_1$ et $Z_3$.}
  \ifprof
  \begin{corrige}
+ On écrit le rapport des vitesses par rapport au porte-satellite 4 : $\dfrac{\omega(3/4)}{\omega(1/4)} = - \dfrac{Z_1}{Z_3}$.
+ 
+ En réalisant une décomposition du taux de rotation : $\dfrac{\omega(3/0)+\omega(0/4)}{\omega(1/0)+\omega(0/4)} = \dfrac{-\omega(4/0)}{\omega(1/0)-\omega(4/0)}= \dfrac{-\omega(4/0)}{\omega(1/0)-\omega(4/0)} =- \dfrac{Z_1}{Z_3}$ $\Leftrightarrow \dfrac{\omega(4/0)}{\omega(1/0)-\omega(4/0)} = \dfrac{Z_1}{Z_3} $
+ $\Leftrightarrow {\omega(4/0)} = \dfrac{Z_1}{Z_3} \omega(1/0)-\dfrac{Z_1}{Z_3} \omega(4/0)$
+ $\Leftrightarrow {\omega(4/0)} \left(1+\dfrac{Z_1}{Z_3} \right)= \dfrac{Z_1}{Z_3} \omega(1/0)$
+ $\Leftrightarrow \dfrac{\omega(4/0)}{\omega(1/0)}=  \dfrac{Z_1}{Z_1+Z_3} $.
  \end{corrige}
  \else
  \fi
@@ -522,6 +540,8 @@ Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le ro
 \textit{Faire l’application numérique et déterminer une relation entre $Z_1$ et $Z_3$. Sachant que $Z_1=19$ en déduire $Z_3$.}
  \ifprof
  \begin{corrige}
+ On a $\dfrac{N_4}{N_1}=\dfrac{Z_1}{Z_1+Z_3} $ $\Leftrightarrow Z_3=\dfrac{Z_1 N_1}{N_4} -  Z_1 $ 
+ $\Leftrightarrow Z_3=\dfrac{19 \times 1400}{350} -  19 = \SI{57}{dents}$.
  \end{corrige}
  \else
  \fi
@@ -531,6 +551,7 @@ Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le ro
 
  \ifprof
  \begin{corrige}
+ On a $R_1+2R_2 = R_3$ $\Leftrightarrow Z_1+2Z_2 = Z_3$ $\Leftrightarrow Z_2 = \dfrac{Z_3- Z_1}{2}=\dfrac{57-19}{2}=\SI{19}{dents}$.
  \end{corrige}
  \else
  \fi
