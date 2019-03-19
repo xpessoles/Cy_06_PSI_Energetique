@@ -93,7 +93,7 @@ Chapitre 1 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
-%\begin{multicols}{2}
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -398,11 +398,12 @@ On s’intéresse au réducteur équipant la roue arrière motrice et directionn
 
 \end{corrige}
 \else
-\fi
-
 \begin{center}
 \includegraphics[width=\linewidth]{images/char_02}
 \end{center}
+
+\fi
+
 
 
 \subparagraph{}
@@ -561,11 +562,15 @@ Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le ro
 \section*{Exercice 5 -- Trains épicycloïdaux}
 \setcounter{exo}{0}
 
+\ifprof
+\else
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_01.png}
 \end{center}
+\fi
+
 
 \subparagraph{}
 \textit{Déterminer le rapport de réduction $\dfrac{\omega_{30}}{\omega_{10}}$.}
@@ -584,11 +589,17 @@ $\Leftrightarrow \omega_{30}=\dfrac{Z_1}{Z_0+Z_1}\omega_{10} $
  \fi
 
 
+\ifprof
+\else
+
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_02.png}
 \end{center}
+\fi
+
+
 
 \subparagraph{}
 \textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
@@ -634,13 +645,16 @@ $\Leftrightarrow \dfrac{\omega_{30}}{\omega_{10}}
 
 
 
-
-
+\ifprof
+\else
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_03.png}
 \end{center}
+\fi
+
+
 
 \subparagraph{}
 \textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
@@ -676,11 +690,19 @@ $\Leftrightarrow  \dfrac{\omega_{30}}{\omega_{10}} = \dfrac{ \dfrac{Z_{1}Z_{22}}
  \fi
 
 
+\ifprof
+\else
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_04.png}
 \end{center}
+\fi
+
+\ifprof
+\newpage
+\else
+\fi
 
 \subparagraph{}
 \textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
@@ -729,6 +751,8 @@ $\Leftrightarrow  \dfrac{\omega_{30}}{\omega_{10}} = \dfrac{ \dfrac{Z_{1}Z_{22}}
 Vérifier les performances d'un réducteur.
 \end{obj}
 
+\ifprof
+\else
 Il existe 2 grandes familles de poulies Redex H ou SR, selon la forme de l’arbre central.
 
 
@@ -745,11 +769,23 @@ Les liaisons encastrements entre les axes 9 et les satellites 6 et 10 sont assur
 Les satellites 10 sont en prise avec le planétaire 24 (qui est en liaison encastrement avec le bâti 18 à l’aide d’un assemblage cannelé).
 Les satellites 6 sont en prise avec le planétaire 31 (qui est en liaison encastrement avec l’arbre de sortie 32 à l’aide d’un assemblage cannelé). Cet arbre de sortie 32 est guidé en rotation par rapport au bâti 18 à l’aide de deux roulements à aiguilles 19 et 21.
 
-
+\fi
 
 \subparagraph{}
 \textit{Déterminer littéralement, en fonction des nombres de dents, la loi E/S du système (c'est-à-dire le rapport de transmission).}
 
+\ifprof
+\begin{corrige}
+On cherche $\dfrac{\omega_{30}}{\omega_{10}}$. En bloquant le porte satellite 1, on a  
+$\dfrac{\omega_{31}}{\omega_{01}}=\dfrac{Z_0 Z_2 }{Z_2' Z_3}$. En décomposant les vitesses, on a :
+$\dfrac{\omega_{30}-\omega_{10}}{\omega_{10}}=-\dfrac{Z_0 Z_2 }{Z_2' Z_3}$
+$\Leftrightarrow \omega_{30}-\omega_{10}=-\dfrac{Z_0 Z_2 }{Z_2' Z_3}\omega_{10}$
+$\Leftrightarrow \omega_{30}=\left(1-\dfrac{Z_0 Z_2 }{Z_2' Z_3}\right)\omega_{10}$
+$\Leftrightarrow \dfrac{\omega_{30}}{\omega_{10}}=1-\dfrac{Z_0 Z_2 }{Z_2' Z_3}$.
+AN : $ \dfrac{\omega_{30}}{\omega_{10}}=1-\dfrac{49 \times 34}{31 \times 46}=-0,17$
+\end{corrige}
+\else
+\fi
 
 %
 %\begin{center}
@@ -757,11 +793,12 @@ Les satellites 6 sont en prise avec le planétaire 31 (qui est en liaison encast
 %\end{center}
 %
 %
-
+\ifprof
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/redex_04}
 \end{center}
-
+\fi
 
 
 
@@ -772,6 +809,10 @@ Les satellites 6 sont en prise avec le planétaire 31 (qui est en liaison encast
 \begin{obj}
 Vérifier les performances d'un réducteur.
 \end{obj}
+
+\ifprof
+\else
+
 ECP Group est un fabricant européen spécialisé
 dans la conception et la construction de machines
 permettant la réduction du volume de ces D.I.B. au
@@ -788,8 +829,10 @@ de matières.
 \end{center}
 
 On donne un extrait du cahier des charges que doit respecter le broyeur.
+\fi
 
-
+\ifprof
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/broyeur_06}
 \end{center}
@@ -799,12 +842,28 @@ On donne le schéma cinématique du broyeur
 \includegraphics[width=\linewidth]{images/broyeur_05}
 \end{center}
 
-\subparagraph{}\textit{Donner les rapports de chacun des 4 étages de réduction.}
+\fi
 
+\subparagraph{}\textit{Donner les rapports de chacun des 4 étages de réduction.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 \subparagraph{}\textit{Vérifier que les exigences 1.1 et 1.2 sont satisfaites.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 \subparagraph{}\textit{Évaluer le couple de broyage sur chacun des axes.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 
 
@@ -814,7 +873,8 @@ On donne le schéma cinématique du broyeur
 
 \begin{obj} Déterminer la vitesse d'un moteur pour répondre au cahier des charges. 
 \end{obj}
-
+\ifprof
+\else
 \footnotesize{
 \textit{Les boues sont constituées d’eau et de matière sèche. La siccité est le pourcentage massique de matière
 sèche. Ainsi, une boue avec une siccité de 10\% présente une humidité de 90\%. Afin
@@ -865,14 +925,24 @@ tambour 1;
 \item la boue liquide est ensuite introduite.
 \end{itemize}
 
+\fi
 
 
 \subparagraph{}
 \textit{Déterminer la fréquence de rotation de la vis (par rapport au bâti) lors de la phase de lancement.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 \subparagraph{}
 \textit{Déterminer alors la fréquence de rotation que doit avoir le moteur <<rel>> pour respecter l'exigence 1.1.}
-
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 
 
@@ -881,7 +951,8 @@ tambour 1;
 
 \textit{ D'après documentation F. Mazet.} \\
 
-
+\ifprof
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/cx_01}
 \end{center}
@@ -902,10 +973,12 @@ On note :
 \item \textbf{3:} le seconde poulie de rayon $R_p$;
 \end{itemize}
 %La fréquence de rotation du moteur Man est de 1900 tr/min.
+
+
+\fi
+
 \subparagraph{}
 \textit{Déterminer la relation entre $\omega(1/0)$ et $v$.}
-
-
 
 \ifprof
 \begin{corrige}
@@ -914,10 +987,13 @@ On note :
 \else
 \fi
 
- 
+
+\ifprof
+\else 
 \begin{center}
 \includegraphics[width=\linewidth]{images/cx_02}
 \end{center}
+\fi
 
 \section*{Exercice 9 -- Transmission à variation continue -- Vario Fendt}
 \setcounter{exo}{0}
@@ -928,6 +1004,8 @@ On note :
 Établir les relations cinématiques dans une transmission mécanique de tracteur.
 \end{obj}
 
+\ifprof
+\else
 
 On s'intéresse à la chaîne de transmission de puissance d'un tracteur Fendt. Cette dernière est composée d'un moteur (et d'une pompe) hydraulique (Mh) ainsi que d'un moteur thermique MAN (Mm). 
 
@@ -945,6 +1023,8 @@ Une étude antérieure a permis d'établir que $\dfrac{\omega(Ph/0)}{\omega(Mh/0
 %\end{center}
 
 La fréquence de rotation du moteur Man est de 1900 tr/min.
+\fi
+
 \subparagraph{}
 \textit{Déterminer la relation entre $\omega(1/0)$, $\omega(3/0)$ et $\omega(4/0)$}
 
@@ -997,6 +1077,9 @@ On a donc, $A=\left( R_{12}+R_{32}\right)R_{1M} R_{3P}$, $B=R_{32} 2R_{1M}$ et $
 \textit{D'après ressources Pole Chateaubriand -- Joliot-Curie.}
 \setcounter{exo}{0}
 
+\ifprof
+\else
+
 La conduite en ville nécessite des répétitions
 fréquentes de la manœuvre d’embrayage /
 débrayage. Pour améliorer le confort de conduite,
@@ -1042,7 +1125,7 @@ Le diamètre de la poulie 2 est le double de celui de la poulie 1.
 \begin{center}
 \includegraphics[width=\linewidth]{images/rest_03}
 \end{center}
-
+\fi
 \begin{obj}
 Déterminer la première partie
 de la loi entrée/sortie en vitesse du
@@ -1087,6 +1170,9 @@ d’entrée et de sortie cinématiques.}
 \section*{Exercice 11 -- Axe de machine-outil à commande numérique}
 \textit{D'après ressources Pole Chateaubriand -- Joliot-Curie.}
 \setcounter{exo}{0}
+
+\ifprof
+\else
 L’usinage est une opération de transformation d’un produit par enlèvement de matière.
 Cette opération est à la base de la fabrication de produits dans les industries mécaniques.
 La génération d’une surface par enlèvement de matière est obtenue grâce à un outil muni
@@ -1106,6 +1192,7 @@ sur lequel est fixée l’outil, par rapport au bâti 0. Le coulisseau 1 est mis
 \end{center}
 
 On note $p$ le pas de vis. 
+\fi
 
 
 \subparagraph{}
@@ -1120,7 +1207,8 @@ On note $p$ le pas de vis.
 \section*{Exercice 12 -- Treuil de levage}
 \textit{D'après ressources Pole Chateaubriand -- Joliot-Curie.}
 \setcounter{exo}{0}
-
+\ifprof
+\else
 On s’intéresse à un treuil dont la photo et le modèle cinématique sont donnés ci-dessous.
 \begin{center}
 \includegraphics[width=.5\linewidth]{images/treuil_01}
@@ -1132,13 +1220,18 @@ On s’intéresse à un treuil dont la photo et le modèle cinématique sont don
 
 On note $Z_2$ le nombre de dents de la roue dentée de l'arbre 2. On note l'arbre intermédiaire 3 et $Z_{3a}$ et $Z_{3b}$ les nombres de dents de ses deux roues dentées. On note $R$ le rayon du tambour 4 sur lequel s’enroule sans glisser un câble et $Z_4$ le nombre de dents de sa roue dentée.
 
+\fi
 
 \subparagraph{}
-\textit{Déterminer la relation entre $v_{51}$ la vitesse de déplacement de la charge par rapport au bâti et $\omega_{21}$ la vitesse de
-rotation du moteur.}
+\textit{Déterminer la relation entre $v_{51}$ la vitesse de déplacement de la charge par rapport au bâti et $\omega_{21}$ la vitesse de rotation du moteur.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 \ifprof
-%\end{multicols}
+\end{multicols}
 \else
 \end{multicols}
 \fi
