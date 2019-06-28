@@ -1,5 +1,5 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{ \ifprof \normalsize{Application 1 -- Corrigé } \else  Application 1 \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{ \ifprof \normalsize{Application 1 -- Corrigé } \else  \ifcolle Colle \else Application 1\fi \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
@@ -39,7 +39,7 @@
 \thispagestyle{plain}
 
 \ifprof
-\vspace{5.5cm}
+\vspace{4cm}
 \else
 \vspace{4.9cm}
 \fi
