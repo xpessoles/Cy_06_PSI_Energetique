@@ -12,7 +12,6 @@
 \newcommand{\base}[3]{\left(\vect{#1},\vect{#2},\vect{#3} \right)}
 
 
-
 \newcommand{\vx}[1]{\vect{x_{#1}}}
 \newcommand{\vy}[1]{\vect{y_{#1}}}
 \newcommand{\vz}[1]{\vect{z_{#1}}}
@@ -31,6 +30,16 @@
 % Définition des torseurs 
 %%%%%%%%%%%%
 
+\newcommand{\ec}[2]{%
+\mathcal{E}_c\left(#1/#2\right)}
+
+\newcommand{\pext}[3]{%
+\mathcal{P}\left(#1\rightarrow#2/#3\right)}
+
+\newcommand{\pint}[3]{%
+\mathcal{P}\left(#1 \stackrel{\text{#3}}{\leftrightarrow} #2\right)}
+
+
  \newcommand{\torseur}[1]{%
 \left\{{#1}\right\}
 }
@@ -43,8 +52,9 @@
 \left\{\sigma \left(#1/#2 \right) \right\}
 }
 \newcommand{\torseurdyn}[2]{%
-\left\{\delta \left(#1/#2 \right) \right\}
+\left\{\mathcal{D} \left(#1/#2 \right) \right\}
 }
+
 
 \newcommand{\torseurstat}[3]{%
 \left\{\mathcal{#1} \left(#2\rightarrow #3 \right) \right\}
