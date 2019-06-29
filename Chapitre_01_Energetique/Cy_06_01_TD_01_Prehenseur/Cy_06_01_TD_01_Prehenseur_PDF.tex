@@ -1,0 +1,30 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{../../style/new_style}
+\input{../../style/macros_SII}
+\input{../../style/Cycle_06_Entete}
+\livretfalse
+
+
+\begin{document}
+\newcommand{\td}{Cy_06_01_TD_01_Prehenseur}
+% Sujet
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{images/}}
+\input{\td.tex}
+
+%% Colle
+%\fichetrue \proffalse \tdtrue \coursfalse \colletrue
+%\graphicspath{{../../style/png/}{images/}}
+%\newpage \input{\td.tex}
+
+% Corrigé
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{images/}}
+\newpage \input{\td.tex}
+
+\end{document}
