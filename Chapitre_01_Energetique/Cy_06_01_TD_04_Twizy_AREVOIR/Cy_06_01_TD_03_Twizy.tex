@@ -149,12 +149,49 @@ Objectif : Déterminer l’équation de mouvement nécessaire pour choisir l’e
 }
 \ifprof
 \begin{corrige}~\\
-On a isole l'ensemble du véhicule, et on a : 
+On isole l'ensemble du véhicule, et on a : 
 \begin{itemize}
 \item $\ec{E}{0} = \ec{1}{0}+\ec{2}{0}+\ec{3}{0}+\ec{4}{0}$;
-\item $\pext{\overline{E}}{E}{0} = \pext{0}{1}{0}+\pext{0}{2}{0}+\pext{\text{pes}}{E}{0}$;
-\item $\mathcal{P}_{\text{int}}=\pint{1}{3}+\pint{3}{2}+\pint{3}{4}+\pint{2}{4}$ car les liaisons à l'intérieur de l'isolement sont parfaites.
+\item $\pext{\overline{E}}{E}{0} = \pext{0}{1}{0}+\pext{0}{2}{0}+\pext{\text{pes}}{3}{0}$;
+\item $\mathcal{P}_{\text{int, Liaisons}}=\pint{1}{3}{}+\pint{3}{2}{}+\pint{2}{4}{}$ car les liaisons à l'intérieur de l'isolement sont parfaites;
+\item $\mathcal{P}_{\text{moteur}}=\pint{3}{4}{}= \torseurstat{F}{3}{4} \otimes \torseurcin{V}{4}{3}= C_m \omega_{4/3}$;
+\item au final : 
+$\dfrac{\dd \ec{1}{0}}{\dd t}+\dfrac{\dd \ec{2}{0}}{\dd t}+\dfrac{\dd \ec{3}{0}}{\dd t}+\dfrac{\dd \ec{4}{0}}{\dd t} =
+\pext{0}{1}{0}+\pext{0}{2}{0}+\pext{\text{pes}}{3}{0}+C_m \omega_{4/3} $
 \end{itemize}
+Calcul des puissances extérieures :
+\begin{itemize}
+\item $ \pext{0}{1}{0} = \torseurstat{F}{0}{1} \otimes \torseurcin{V}{1}{0} $ 
+$=\torseurl{T_1\vect{x_s}+N_1\vect{z_s}}{\vect{0}}{J_1} \otimes  \torseurl{\omega_{1/0} \vect{y_0}}{\vectv{I_1}{1}{0}+\vect{J_1I_1}\wedge \omega_{1/0} \vect{y_0}}{J_1}$ 
+
+$=\torseurl{T_1\vect{x_s}+N_1\vect{z_s}}{\vect{0}}{J_1} \otimes  \torseurl{\omega_{1/0} \vect{y_0}}{-\mu\vect{x_s}\wedge \omega_{1/0} \vect{y_s}}{J_1}$ 
+$=\torseurl{T_1\vect{x_s}+N_1\vect{z_s}}{\vect{0}}{J_1} \otimes  \torseurl{\omega_{1/0} \vect{y_0}}{-\mu\omega_{1/0}\vect{z_s}}{J_1}$ 
+
+$= -\mu\omega_{1/0} N_1$.
+
+\item $ \pext{0}{2}{0} = \torseurstat{F}{0}{2} \otimes \torseurcin{V}{2}{0}$ $= -\mu\omega_{2/0} N_2$.
+
+\item $ \pext{\text{pes}}{3}{0} = \torseurstat{F}{\text{pes}}{3} \otimes \torseurcin{V}{3}{0} =\torseurl{-mg\vect{z_0}}{\vect{0}}{G} \otimes  \torseurl{\vect{0}}{v\vect{x_s}}{G} =-mvg\sin\alpha$.
+
+\end{itemize}
+
+
+Calcul des énergies cinétiques : 
+\begin{itemize}
+\item $\ec{1}{0} = \dfrac{1}{2} \cdot 2 J_r \omega_{1/0}^2  = J_r \omega_{1/0}^2$ (masse des roues négligée);
+\item $\ec{2}{0} = J_r \omega_{1/0}^2$;
+\item $\ec{3}{0} = \dfrac{1}{2}mv^2$;
+\item $\ec{4}{0} = \dfrac{1}{2} J_m \omega_m^2$ (masse du rotor négligée).
+\end{itemize}
+
+
+En appliquant le théorème de l'énergie cinétique, on a :
+$$
+4 J_r \omega_{1/0} \dot{\omega}_{1/0} + m v \dot{v} + J_m \omega_m \dot{\omega}_m =  -\mu\omega_{1/0} N_1-\mu\omega_{2/0} N_2 -mvg\sin\alpha +C_m \omega_{4/3}. $$
+
+Cette équation dépend des efforts dans les roues. Ce n'est donc pas une équation de mouvement.
+
+
 \end{corrige}
 
 \else
@@ -164,6 +201,16 @@ On a isole l'ensemble du véhicule, et on a :
 \subparagraph{}\textit{À partir des théorèmes généraux de la dynamique, déterminer une équation supplémentaire qui permet simplement de déterminer $(N_1 + N_2)$. Puis avec l’équation précédente, écrire l’équation de mouvement du véhicule.}
 \ifprof
 \begin{corrige}~\\
+Pour exprimer $(N_1 + N_2)$ on peut isoler $E$ et appliquer le théorème de la résultante dynamique en projection sur $\vect{z_s}$. On a : 
+$$
+N_1 + N_2 + \left(-mg\vect{z_0}\right)\cdot \vect{z_s} = \vectg{G}{E}{0} \cdot \vect{z_s} \Rightarrow 
+N_1 + N_2 -mg\cos \alpha = 0
+$$
+
+Et donc : 
+
+$$4 J_r \omega_{1/0} \dot{\omega}_{1/0} + m v \dot{v} + J_m \omega_m \dot{\omega}_m =  -\mu\omega_{1/0} mg\cos \alpha -mvg\sin\alpha +C_m \omega_{4/3}. $$
+
 \end{corrige}
 \else
 \fi
@@ -171,6 +218,15 @@ On a isole l'ensemble du véhicule, et on a :
 \subparagraph{}\textit{Déterminer en énonçant les hypothèses nécessaires les relations entre $(v, \omega_{10})$, $(v, \omega_{20})$ et $(\omega_{m}, \omega_{10})$. Montrer que l’équation de mouvement du véhicule peut se mettre sous la forme $\dfrac{rC_m(t)}{R}-F_r(t)=M_{eq}\dfrac{\text{d} v(t)}{\text{d} t}$ avec $F_r(t)$ fonction de $m$, $\mu$, $g$, $R$ et $\alpha$ et $M_{eq}$ fonction $m$, $J_m$, $J_R$, $R$ et $r$.}
 \ifprof
 \begin{corrige}~\\
+En faisant l'hypothèse de roulement sans glissement en $I_1$ et $I_2$ on montre que $v = R\omega_{1/0}= R\omega_{2/0}$. De plus, $\omega_{1/0}=r\omega_m$.
+
+
+On a donc : 
+$$4 J_r \dfrac{v}{R}  \dfrac{\dot{v}}{R}  + m v \dot{v} + J_m \dfrac{v}{rR} \dfrac{\dot{v}}{rR} =  -\mu\dfrac{v}{R}  mg\cos \alpha -mvg\sin\alpha +C_m \dfrac{v}{rR} $$
+
+$$ \Leftrightarrow \dot{v}\left(  \dfrac{4 J_r}{R}  + m   +  \dfrac{J_m }{r^2R}\right) +\mu mg\cos \alpha +Rmg\sin\alpha =C_m \dfrac{1}{r} $$
+$$ \Leftrightarrow \dot{v}\dfrac{r^2}{R^2}\left(  4 J_r  + m   +  \dfrac{J_m }{r^2}\right) =C_m \dfrac{r}{R}-\dfrac{r^2}{R} mg\left(\mu\cos \alpha +R\sin\alpha\right) $$
+
 \end{corrige}
 \else
 \fi
