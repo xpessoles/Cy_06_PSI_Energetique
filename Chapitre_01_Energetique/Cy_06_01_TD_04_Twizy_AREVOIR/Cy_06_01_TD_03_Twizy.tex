@@ -218,14 +218,16 @@ $$4 J_r \omega_{1/0} \dot{\omega}_{1/0} + m v \dot{v} + J_m \omega_m \dot{\omega
 \subparagraph{}\textit{Déterminer en énonçant les hypothèses nécessaires les relations entre $(v, \omega_{10})$, $(v, \omega_{20})$ et $(\omega_{m}, \omega_{10})$. Montrer que l’équation de mouvement du véhicule peut se mettre sous la forme $\dfrac{rC_m(t)}{R}-F_r(t)=M_{eq}\dfrac{\text{d} v(t)}{\text{d} t}$ avec $F_r(t)$ fonction de $m$, $\mu$, $g$, $R$ et $\alpha$ et $M_{eq}$ fonction $m$, $J_m$, $J_R$, $R$ et $r$.}
 \ifprof
 \begin{corrige}~\\
-En faisant l'hypothèse de roulement sans glissement en $I_1$ et $I_2$ on montre que $v = R\omega_{1/0}= R\omega_{2/0}$. De plus, $\omega_{1/0}=r\omega_m$.
+En faisant l'hypothèse de roulement sans glissement en $I_1$ et $I_2$ on montre que $v = R\omega_{1/0}= R\omega_{2/0}$. De plus, $r\omega_{1/0}=\omega_m$ (défini ainsi dans le sujet).
 
 
 On a donc : 
-$$4 J_r \dfrac{v}{R}  \dfrac{\dot{v}}{R}  + m v \dot{v} + J_m \dfrac{v}{rR} \dfrac{\dot{v}}{rR} =  -\mu\dfrac{v}{R}  mg\cos \alpha -mvg\sin\alpha +C_m \dfrac{v}{rR} $$
+$$4 J_r \dfrac{v}{R}  \dfrac{\dot{v}}{R}  + m v \dot{v} + J_m \dfrac{rv}{R} \dfrac{\dot{v}r}{R} =  -\mu\dfrac{v}{R}  mg\cos \alpha -mvg\sin\alpha +C_m \dfrac{rv}{R} $$
 
-$$ \Leftrightarrow \dot{v}\left(  \dfrac{4 J_r}{R}  + m   +  \dfrac{J_m }{r^2R}\right) +\mu mg\cos \alpha +Rmg\sin\alpha =C_m \dfrac{1}{r} $$
-$$ \Leftrightarrow \dot{v}\dfrac{r^2}{R^2}\left(  4 J_r  + m   +  \dfrac{J_m }{r^2}\right) =C_m \dfrac{r}{R}-\dfrac{r^2}{R} mg\left(\mu\cos \alpha +R\sin\alpha\right) $$
+
+$$  \Leftrightarrow \dot{v}\left(\dfrac{4 J_r }{R^2}   + m  +  \dfrac{J_mr^2}{R^2}  \right)=  -\mu\dfrac{1}{R}  mg\cos \alpha -mg\sin\alpha +C_m \dfrac{r}{R}. $$
+
+En conséquences, $M=\dfrac{4 J_r }{R^2}   + m  +  \dfrac{J_mr^2}{R^2}$ et $F_r(t)=mg\left(\mu\dfrac{1}{R}  \cos \alpha +\sin\alpha\right)$
 
 \end{corrige}
 \else
@@ -247,6 +249,12 @@ résistance au roulement $\mu$. Proposer un protocole expérimental pour l’év
 \end{itemize}}
 \ifprof
 \begin{corrige}~\\
+En se plaçant à vitesse constante, on a $\dfrac{rC_m(t)}{R}-F_r(t)=0$.
+Si le sol est horizontal, on a  $\alpha=0$ et $F_r(t)=mg\dfrac{\mu}{R}$ .
+
+Ainsi, $\dfrac{rC_m(t)}{R}-mg\dfrac{\mu}{R}=0$ $ \Leftrightarrow \mu = \dfrac{rC_m(t)}{mg}$.
+
+En réalisant l'applicaiton numérique lorsque la vitesse est constante, on a $m=\SI{685}{kg}$, $g=\SI{9,81}{m.s^{-2}}$, $C_m(t)=\SI{5}{Nm}$.
 \end{corrige}
 \else
 \fi
