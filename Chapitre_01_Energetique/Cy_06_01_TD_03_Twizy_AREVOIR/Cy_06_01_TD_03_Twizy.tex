@@ -1,5 +1,5 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{ \ifprof \normalsize{TD 3 -- Corrigé } \else  \ifcolle Colle \else TD 3\fi \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{ \ifprof {TD 3 -- Corrigé } \else  \ifcolle Colle \else TD 3\fi \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
@@ -61,12 +61,13 @@
 \section*{Mise en situation}
 \ifprof
 \else
-\fi
 
 
 \begin{center}
 \includegraphics[width=\linewidth]{Exigences}
 \end{center}
+
+\fi
 
 \subsection*{Choix du motoréducteur}
 
@@ -76,8 +77,11 @@ Mettre en place un modèle permettant de choisir un ensemble moto-réducteur afi
 exigences d’accélération et de vitesse.
 \end{obj}
 
-On donne le paramétrage et les données nécessaires pour cette modélisation.
+\ifprof
 
+\else
+
+On donne le paramétrage et les données nécessaires pour cette modélisation.
 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_02}
@@ -121,7 +125,7 @@ Soit $\omega_m$ la vitesse de rotation de l’arbre moteur 4 par rapport à 3, $
 On notera $r$ le rapport de transmission du réducteur tel que $\omega_m = r \omega_{13}$. On appellera $\vectv{G}{3}{0}=\vect{V}_{3/0}=v\vect{x_s}$la vitesse du véhicule.
 Les roues ont un rayon $R = \SI{280}{mm}$.
 
-
+\fi
 \subsubsection*{Choix de l’ensemble moto-réducteur}
 \subsubsection*{Équation de mouvement du véhicule}
 
@@ -130,6 +134,8 @@ Les roues ont un rayon $R = \SI{280}{mm}$.
 Objectif : Déterminer l’équation de mouvement nécessaire pour choisir l’ensemble moto-réducteur.
 \end{obj}
 
+\ifprof
+\else
 \textbf{Notations :}
 \begin{itemize}
 \item puissance extérieure des actions mécaniques du solide $i$ sur le solide $j$ dans le mouvement de $i$ par rapport à 0 : $\mathcal{P}\left( i \to j / 0\right)$;
@@ -137,6 +143,7 @@ Objectif : Déterminer l’équation de mouvement nécessaire pour choisir l’e
 \item énergie cinétique du solide $i$ dans son mouvement par rapport à 0 : $\mathcal{E}_c\left(i/0\right)$.
 \end{itemize}
 
+\fi
 \subparagraph{}\textit{
 \begin{itemize}
 \item Écrire la forme générale du théorème de l’énergie puissance appliqué au véhicule en identifiant les différentes puissances extérieures, les différentes puissances intérieures et les énergies cinétiques des différents éléments mobiles en respectant les notations précédentes ;
@@ -257,18 +264,20 @@ Ainsi, $\dfrac{rC_m(t)}{R}-mg\dfrac{\mu}{R}=0$ $ \Leftrightarrow \mu = \dfrac{rC
 En réalisant l'applicaiton numérique lorsque la vitesse est constante, on a $m=\SI{685}{kg}$, $g=\SI{9,81}{m.s^{-2}}$, $C_m(t)=\SI{5}{Nm}$.
 \end{corrige}
 \else
-\fi
+
 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_04}
 \end{center}
 
+\fi
 
 \subsubsection*{Choix du moto-réducteur}
 \begin{obj}
 Choisir un ensemble moto-réducteur afin d’obtenir les exigences d’accélération et de vitesse.
 \end{obj}
-
+\ifprof
+\else
 Les courbes de l’évolution de l’accélération maximale $\dfrac{\text{d} v(t)}{\text{d} t}$
 du véhicule obtenue pour 3 moteurs présélectionnés en fonction du rapport de transmission $r$ issues de l’équation de mouvement du véhicule précédente sont fournies ci-dessous.
 
@@ -277,6 +286,7 @@ du véhicule obtenue pour 3 moteurs présélectionnés en fonction du rapport de
 \includegraphics[width=\linewidth]{fig_07}
 \end{center}
 
+\fi
 
 \subparagraph{}\textit{Déterminer la valeur minimale du rapport de transmission $r_{\text{mini}}$ pour les 3 moteurs proposés qui permet d’obtenir l’accélération maximale moyenne souhaitée dans le diagramme des exigences.}
 \ifprof
@@ -312,7 +322,7 @@ Valider le choix du moto-réducteur fait par le constructeur.
 \begin{corrige}~\\
 \end{corrige}
 \else
-\fi
+
 
 
 \begin{center}
@@ -320,7 +330,7 @@ Valider le choix du moto-réducteur fait par le constructeur.
 %\textit{}
 \end{center}
 
-
+\fi
 
 \ifprof
 %\end{multicols}
