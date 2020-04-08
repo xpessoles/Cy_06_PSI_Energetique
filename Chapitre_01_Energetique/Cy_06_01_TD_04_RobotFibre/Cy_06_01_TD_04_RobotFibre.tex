@@ -1,5 +1,5 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{ \ifprof \normalsize{Application 3 -- Corrigé } \else  \ifcolle Colle \else  Application 3\fi \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{ \ifprof {TD 4 -- Corrigé } \else  \ifcolle Colle \else  TD 4\fi \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Émilien Durif}}
 
 
@@ -19,8 +19,8 @@
 %\item Mod1.C5.SF3 : Déterminer la puissance des actions mécaniques intérieures à un ensemble de solides.
 \end{itemize}}}}
 
-\def\xxtitreexo{Chariot élévateur à bateaux}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{X -- ENS -- PSI -- 2012}}
+\def\xxtitreexo{Robot de dépose de fibres optiques}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Mines Ponts -- PSI --  2004}}
 
 \def\xxfigures{
 \includegraphics[width=.7\linewidth]{robot_photo.pdf}
@@ -57,8 +57,7 @@
 \begin{multicols}{2}
 \fi
 
-\subsection*{Robot de pose de fibres optiques}
-\subsubsection*{Présentation}
+\subsection*{Présentation}
 
 L'objet de cette étude est un robot permettant la pose d'arceaux métalliques pour l'installation de réseaux souterrains de télécommunication par fibres optiques.
 
@@ -97,7 +96,7 @@ A un instant $t$, le système est modélisé selon le schéma ci-dessous :
 \end{center}
 
 
-\subsubsection*{Hypothèses}
+\subsection*{Hypothèses}
 L'étude dynamique est à faire dans le plan de symétrie longitudinale du robot.
 
 Le robot est modélisé par le schéma ci-dessus. Il comprend :
@@ -120,7 +119,7 @@ du mouvement est sensiblement celle de la tige $1$;
 $\overrightarrow{F} = F \overrightarrow{x_1}.$
 
 
-\subsubsection*{Repères et paramétrage}
+\subsection*{Repères et paramétrage}
 \begin{itemize}
 \item $R_0\quadruplet{O_0}{\overrightarrow{x_0}}{\overrightarrow{y_0}}{\overrightarrow{z_0}}$, repère associée à la canalisation $O$ et supposé galiléen.
 \item $R_1\quadruplet{O}{\overrightarrow{x_1}}{\overrightarrow{y_1}}{\overrightarrow{z_1}}$, repère associé à la tige $1$.
@@ -129,10 +128,10 @@ $\overrightarrow{F} = F \overrightarrow{x_1}.$
 \item $\beta=\couple{\overrightarrow{x_0}}{{x_2}}=\couple{\overrightarrow{y_0}}{{y_2}}$.
 \end{itemize}
 
-\subsubsection*{Cahier des charges}
+\subsection*{Cahier des charges}
 On désire avoir en fin de mouvement des bras, correspondant à $\delta=14^{\circ}$, une vitesse $\dot{\delta}$ inférieur à $50^{\circ}/s$
 
-\subsubsection*{Modélisation dynamique}
+\subsection*{Modélisation dynamique}
 
 \subparagraph{}
 \textit{Donner l'expression de l'énergie cinétique galiléenne de l'ensemble $\Sigma=\left\{1+2+3+4\right\}$.}
@@ -165,6 +164,7 @@ $.
 \item On en déduit $E_c(1/0)$ :
 $E_c(\Sigma/0)=E_c(1/0)$
 $=\frac{1}{2}\;m_1\;\dot{\delta}^2\left(R^2+\frac{L_1^2}{4}+R\;L_1\;\sin\delta\right)+\frac{m_1\;L_1^2}{12}\;\dot{\delta}^2$
+
 $=\frac{1}{2}\;m_1\;\dot{\delta}^2\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)$.
 \end{itemize}
 \end{corrige}
@@ -216,7 +216,7 @@ $
 \item Les liaisons sont supposées comme parfaites donc :
 
 $
-\mathcal{P}_{liaisons}(\text{int}\rightarrow \Sigma)=0.
+\mathcal{P}_{\text{liaisons}}(\text{int}\rightarrow \Sigma)=0.
 $
 
 \item Action du vérin entre 1 et 3 :
