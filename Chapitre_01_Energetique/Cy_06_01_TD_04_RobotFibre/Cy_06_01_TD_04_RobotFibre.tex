@@ -140,7 +140,7 @@ On désire avoir en fin de mouvement des bras, correspondant à $\delta=14^{\cir
 Pour calculer l'énergie cinétique de l'ensemble seule la masse de la tige 1 est prise en compte.
 $
 2\;E_c(\Sigma/R_0)=\torseurci{\Sigma}{R_0}\otimes \torseurcin{V}{\Sigma}{R_0}$
-$=\torseurl{G_1}{\overrightarrow{\Omega}(1/0)}{\overrightarrow{V}(G_1,1/0)}\otimes \torseurl{G_1}{m_1\;\overrightarrow{V}(G_1,1/0)}{\overrightarrow{\sigma}(G_1,1/0)}$
+$=\torseurl{\overrightarrow{\Omega}(1/0)}{\overrightarrow{V}(G_1,1/0)}{G_1}\otimes \torseurl{m_1\;\overrightarrow{V}(G_1,1/0)}{\overrightarrow{\sigma}(G_1,1/0)}{G_1}$
 $=m_1\;\left(\overrightarrow{V}(G_1,1/0)\right)^2+\overrightarrow{\sigma}(G_1,1/0)\cdot \overrightarrow{\Omega}(1/0). 
 $
 
@@ -184,7 +184,7 @@ $
 
 $
 \mathcal{P}(\text{\text{pes}}\rightarrow \Sigma/0)=\mathcal{P}(\text{\text{pes}}\rightarrow 1/0)=\torseurstat{T}{\text{pes}}{1}\otimes \torseurcin{V}{1}{0}
-=\torseurl{G_1}{-m_1\;g\;\overrightarrow{y_0}}{\overrightarrow{0}}\otimes \torseurl{G_1}{\overrightarrow{\Omega}(1/0}{\overrightarrow{V}(G_1,1/0)}\\
+=\torseurl{-m_1\;g\;\overrightarrow{y_0}}{\overrightarrow{0}}{G_1}\otimes \torseurl{\overrightarrow{\Omega}(1/0}{\overrightarrow{V}(G_1,1/0)}{G_1}\\
 =-m_1\;g\;\overrightarrow{y_0}\cdot\overrightarrow{V}(G_1,1/0)=-m_1\;g\frac{L_1}{2}\dot{\delta}\;\cos\delta.
 $
 
@@ -192,14 +192,14 @@ $
 
 $
 \mathcal{P}(\mbox{contact en I}\rightarrow \Sigma/0)=\torseurstat{T}{0}{4}\otimes \torseurcin{V}{4}{0}
-=\torseurl{I}{\overrightarrow{R}_{04}}{\overrightarrow{0}}\otimes \torseurl{I}{\overrightarrow{\Omega}(4/0)}{\overrightarrow{0}}=0.
+=\torseurl{\overrightarrow{R}_{04}}{\overrightarrow{0}}{I}\otimes \torseurl{\overrightarrow{\Omega}(4/0)}{\overrightarrow{0}}{I}=0.
 $
 
 \item Actions du contact en E entre $0$ et $2$ (\textit{le contact se fait sans frottement}) :
 
 $
 \mathcal{P}(\mbox{contact en E}\rightarrow \Sigma/0)=\torseurstat{T}{0}{2}\otimes \torseurcin{V}{4}{0}
-=\torseurl{E}{R_{02}\;\overrightarrow{y_0}}{\overrightarrow{0}}\otimes \torseurl{E}{\overrightarrow{\Omega}(2/0)}{\overrightarrow{V}(E,2/0)}=R_{02}\;\overrightarrow{y_0}\cdot\overrightarrow{V}(E,2/0)=0.
+=\torseurl{R_{02}\;\overrightarrow{y_0}}{\overrightarrow{0}}{E}\otimes \torseurl{\overrightarrow{\Omega}(2/0)}{\overrightarrow{V}(E,2/0)}{E}=R_{02}\;\overrightarrow{y_0}\cdot\overrightarrow{V}(E,2/0)=0.
 $
 
 
@@ -223,7 +223,7 @@ $
 
 $
 \mathcal{P}_\text{verin}(\text{int}\rightarrow \Sigma)=\torseurstat{T}{1}{3}\otimes \torseurcin{V}{3}{1}
-=\torseurl{N}{\overrightarrow{F}}{\overrightarrow{0}}\otimes \torseurl{N}{\overrightarrow{0}}{\overrightarrow{V}(N,3/1)}
+=\torseurl{\overrightarrow{F}}{\overrightarrow{0}}{N}\otimes \torseurl{\overrightarrow{0}}{\overrightarrow{V}(N,3/1)}{N}
 =F\;\overrightarrow{V}(N,3/1)\cdot\overrightarrow{x_1}.
 $
 
