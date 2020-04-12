@@ -58,9 +58,10 @@
 \fi
 
 \subsection*{Présentation}
-
+\ifprof
+\else
 L'objet de cette étude est un robot permettant la pose d'arceaux métalliques pour l'installation de réseaux souterrains de télécommunication par fibres optiques.
-
+\fi
 \begin{obj}
 Enfin des mouvements des bras, on doit avoir $\delta=14\degres$ et $\dot{\delta}\leq 50\degres.\text{s}^{-1}$.
 \end{obj}
@@ -69,6 +70,8 @@ Enfin des mouvements des bras, on doit avoir $\delta=14\degres$ et $\dot{\delta}
 %\begin{center}
 %\includegraphics[width=\linewidth]{req_robot.pdf}
 %\end{center}
+\ifprof
+\else
 
 De façon à pouvoir dérouler les arceaux métalliques, le chariot est centré dans la canalisation à l'aide de quatre bras actionnés par un vérin hydraulique.
 
@@ -77,9 +80,9 @@ De façon à pouvoir dérouler les arceaux métalliques, le chariot est centré 
 \end{center}
 
 
-Afin de valider le choix du vérin, et donc sa puissance, il faut déterminer l'action F du vérin
+Afin de valider le choix du vérin, et donc sa puissance, il faut déterminer l'action $F$ du vérin
 qui permettra au robot de se positionner correctement dans la canalisation.
-A l'instant où un anneau métallique doit
+À l'instant où un anneau métallique doit
 être installé, les roues du train arrière sont
 bloquées par rapport au chariot. Sous l'effet
 d'un vérin, les bras inférieurs vont soulever le
@@ -87,39 +90,46 @@ robot qui va pivoter sur son train arrière. La fin
 du positionnement sera assurée lorsque les
 roulettes des bras supérieurs viendront en
 contact avec la paroi de la canalisation.
-A un instant $t$, le système est modélisé selon le schéma ci-dessous :
+À un instant $t$, le système est modélisé selon le schéma ci-dessous :
 
 
 \begin{center}
 \includegraphics[width=0.9\linewidth]{chariot_centrage2.pdf}
 %\caption{Modélisation du robot \label{robot_model}}
 \end{center}
-
+\fi
 
 \subsection*{Hypothèses}
+\ifprof
+\else
+
 L'étude dynamique est à faire dans le plan de symétrie longitudinale du robot.
 
 Le robot est modélisé par le schéma ci-dessus. Il comprend :
 \begin{itemize}
-\item une tige 1 de longueur $OB=L_1$, de section négligeable, de masse $m_1$, et de centre d'inertie $G_1$, tel que $\overrightarrow{OG_1}=\frac{L_1}{2}\overrightarrow{x_1}$;
-\item une roue $4$, de centre $O$, de rayon $R = 0,07 m$, de masse négligeable, qui
-correspond au train arrière. Cette roue est en liaison encastrement avec 1;
-\item un bras 2 constitué de deux éléments BE et BM tels que $\overrightarrow{BE}=-a\overrightarrow{y_2}$ et $\overrightarrow{BM}=b\;\overrightarrow{x_2}$, de section et de masse négligeables;
-\item une biellette 3 ($NM$) de masse négligeable et dont la direction au cours
+\item une tige \textbf{1} de longueur $OB=L_1$, de section négligeable, de masse $m_1$, et de centre d'inertie $G_1$, tel que $\overrightarrow{OG_1}=\frac{L_1}{2}\overrightarrow{x_1}$;
+\item une roue $4$, de centre $O$, de rayon $R = \SI{0,07}{m}$, de masse négligeable, qui
+correspond au train arrière. Cette roue est en liaison encastrement avec \textbf{1};
+\item un bras \textbf{2} constitué de deux éléments BE et BM tels que $\overrightarrow{BE}=-a\overrightarrow{y_2}$ et $\overrightarrow{BM}=b\;\overrightarrow{x_2}$, de section et de masse négligeables;
+\item une biellette \textbf{3} ($NM$) de masse négligeable et dont la direction au cours
 du mouvement est sensiblement celle de la tige $1$;
 \item un vérin hydraulique de masse négligeable.
 \end{itemize}
 
- En I, le contact entre la roue 4 et la paroi 0 se fait par roulement sans glissement.
+ En $I$, le contact entre la roue \textbf{4} et la paroi \textbf{0} se fait par roulement sans glissement.
 
- En E, le contact entre le bras 2 et la paroi 0 se fait sans frottement.
+ En $E$, le contact entre le bras \textbf{2} et la paroi \textbf{0} se fait sans frottement.
 
  L'action $\overrightarrow{F}$ du vérin sur la biellette $3a$, à chaque instant, pour direction $\overrightarrow{x_1}$ :
 
 $\overrightarrow{F} = F \overrightarrow{x_1}.$
 
+\fi
 
 \subsection*{Repères et paramétrage}
+\ifprof
+\else
+
 \begin{itemize}
 \item $R_0\quadruplet{O_0}{\overrightarrow{x_0}}{\overrightarrow{y_0}}{\overrightarrow{z_0}}$, repère associée à la canalisation $O$ et supposé galiléen.
 \item $R_1\quadruplet{O}{\overrightarrow{x_1}}{\overrightarrow{y_1}}{\overrightarrow{z_1}}$, repère associé à la tige $1$.
@@ -128,9 +138,13 @@ $\overrightarrow{F} = F \overrightarrow{x_1}.$
 \item $\beta=\couple{\overrightarrow{x_0}}{{x_2}}=\couple{\overrightarrow{y_0}}{{y_2}}$.
 \end{itemize}
 
+\fi
 \subsection*{Cahier des charges}
-On désire avoir en fin de mouvement des bras, correspondant à $\delta=14^{\circ}$, une vitesse $\dot{\delta}$ inférieur à $50^{\circ}/s$
 
+\ifprof
+\else
+On désire avoir en fin de mouvement des bras, correspondant à $\delta=14^{\circ}$, une vitesse $\dot{\delta}$ inférieur à $50^{\circ}/s$
+\fi
 \subsection*{Modélisation dynamique}
 
 \subparagraph{}
@@ -203,10 +217,13 @@ $
 $
 
 
+
 \end{itemize}
 \end{corrige}
 \else
 \fi
+
+
 
 \subparagraph{}
 \textit{Donner la puissance intérieure à $\Sigma$.}
@@ -321,12 +338,12 @@ Cette valeur de l'effort n'est pas satisfaisante.
 \includegraphics[width=1.0\textwidth]{images/courbes_simulation_corrige.png}
 \end{center}
 
-
-
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
 
 %\begin{figure}[!ht]
 \begin{center}
@@ -334,8 +351,27 @@ Cette valeur de l'effort n'est pas satisfaisante.
 %\caption{Résultats de la simulation dynamique du système \label{simulation_dynamique}}
 \end{center}
 %\end{figure}
+\fi
 
+\ifprof
+\else
+\ifcolle
+\else
+\noindent
+\begin{tabular}{|p{\linewidth}|}
+\hline
+\begin{enumerate}
+\item  $E_c=\frac{1}{2}\;m_1\;\dot{\delta}^2\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)$.
+\item  $ \mathcal{P}(\text{\text{ext}}\rightarrow \Sigma/0)= -m_1\;g\frac{L_1}{2}\dot{\delta}\;\cos\delta $.
+\item  $ \mathcal{P}_{\text{int}}\left( \Sigma\right)=-F\;b\;\left(\dot{\beta}-\dot{\delta}\right)\sin(\beta-\delta) $
+\item $m_1\;\dot{\delta}\left[\ddot{\delta}\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)+\frac{1}{2}\dot{\delta}^2\;R\;L_1\cos\delta\right]
+=-F\;b\;\left(\dot{\beta}-\dot{\delta}\right)\sin(\beta-\delta)-m_1\;g\frac{L_1}{2}\dot{\delta}\;\cos\delta $.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\fi
 
+\fi
 
 
 
