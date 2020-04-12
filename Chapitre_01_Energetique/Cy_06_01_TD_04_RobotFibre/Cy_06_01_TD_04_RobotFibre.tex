@@ -213,39 +213,35 @@ $
 \ifprof
 \begin{corrige}
 \begin{itemize}
-\item Les liaisons sont supposées comme parfaites donc :
+\item Les liaisons sont supposées comme parfaites donc : $\pint{1}{2}{Pivot} =\pint{1}{3}{Pivot Gl.} =\pint{3}{2}{Pivot} =0$.
 
-$
-\mathcal{P}_{\text{liaisons}}(\text{int}\rightarrow \Sigma)=0.
-$
 
 \item Action du vérin entre 1 et 3 :
 
-$
-\mathcal{P}_\text{verin}(\text{int}\rightarrow \Sigma)=\torseurstat{T}{1}{3}\otimes \torseurcin{V}{3}{1}
+$ 
+\pint{1}{3}{Vérin}=\torseurstat{T}{1}{3}\otimes \torseurcin{V}{3}{1}
 =\torseurl{\overrightarrow{F}}{\overrightarrow{0}}{N}\otimes \torseurl{\overrightarrow{0}}{\overrightarrow{V}(N,3/1)}{N}
 =F\;\overrightarrow{V}(N,3/1)\cdot\overrightarrow{x_1}.
 $
-
-En appliquant la relation d'équiprojectivité au solide 1, on obtient :
-
-$
-\overrightarrow{V}(N,3/1)\cdot\overrightarrow{MN}=\overrightarrow{V}(M,3/1)\cdot\overrightarrow{MN}.
-$
+%
+%En appliquant la relation d'équiprojectivité au solide 1, on obtient :
+%
+%$
+%\overrightarrow{V}(N,3/1)\cdot\overrightarrow{MN}=\overrightarrow{V}(M,3/1)\cdot\overrightarrow{MN}.
+%$
 
 En considérant que $\overrightarrow{MN}$ est porté par $\overrightarrow{x_1}$ (hypothèse faite dans l'énoncé), on obtient :
 
 $
-\overrightarrow{V}(N,3/1)\cdot\overrightarrow{x_1}=\overrightarrow{V}(M,3/1)\cdot\overrightarrow{x_1}=\left(\overrightarrow{V}(M,3/2)+\overrightarrow{V}(M,2/1)\right)\cdot\overrightarrow{x_1}\\
-=b\;\left(\dot{\beta}-\dot{\delta}\right)\cdot\overrightarrow{y_2}\cdot\overrightarrow{x_1}=-b\;\left(\dot{\beta}-\dot{\delta}\right)\sin(\beta-\delta).
-$
+\overrightarrow{V}(N,3/1)\cdot\overrightarrow{x_1}$ 
+$=\overrightarrow{V}(M,3/1)\cdot\overrightarrow{x_1}$
+$=\left(\overrightarrow{V}(M,3/2)+\overrightarrow{V}(M,2/1)\right)\cdot\overrightarrow{x_1}$
+$=\left(\vect{0}+\overrightarrow{V}(B,2/1) + \vect{MB}\wedge \vecto{2}{1}\right)\cdot\overrightarrow{x_1}$
+$=\left(-b\vect{x_2} \wedge \left( \dot{\beta} - \dot{\delta}\right)\vect{z_0}\right)\cdot\overrightarrow{x_1}$
+$=b\;\left(\dot{\beta}-\dot{\delta}\right)\cdot\overrightarrow{y_2}\cdot\overrightarrow{x_1}=-b\;\left(\dot{\beta}-\dot{\delta}\right)\sin(\beta-\delta)$.
 
 
-On en déduit :
-
-$
-\mathcal{P}(\text{int}\rightarrow \Sigma)=-F\;b\;\left(\dot{\beta}-\dot{\delta}\right)\sin(\beta-\delta)
-$
+On en déduit : $ \pint{1}{3}{Vérin}=-F\;b\;\left(\dot{\beta}-\dot{\delta}\right)\sin(\beta-\delta) $.
 
 \end{itemize}
 \end{corrige}
@@ -259,18 +255,17 @@ $
 On applique alors le théorème de l'énergie cinétique à $\Sigma$ par rapport au référentiel galiléen $R_0$ :
 
 $
-\frac{d}{dt}(E_c(\Sigma/R_0))=\mathcal{P}(\text{ext}\rightarrow \Sigma/0)+\mathcal{P}(\text{int}\rightarrow \Sigma).
+\frac{\dd }{\dd t}(E_c(\Sigma/R_0))=\mathcal{P}(\text{ext}\rightarrow \Sigma/0)+\mathcal{P}_\text{int}( \Sigma).
 $
 
-Or, 
-
-$
-\frac{d}{dt}(E_c(\Sigma/R_0))=\frac{d}{dt}\left[\frac{1}{2}\;m_1\;\dot{\delta}^2\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)\right]
-=m_1\;\dot{\delta}\left[\ddot{\delta}\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)+\frac{1}{2}\dot{\delta}^2\;R\;L_1\cos\delta\right]
-$
+Or, $
+\frac{\dd }{\dd t}(E_c(\Sigma/R_0))$ 
+$=\frac{\dd }{\dd t}\left[\frac{1}{2}\;m_1\;\dot{\delta}^2\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)\right]$
+$=m_1\;\dot{\delta}\left[\ddot{\delta}\left(R^2+\frac{L_1^2}{3}+R\;L_1\sin\delta\right)+\frac{1}{2}\dot{\delta}^2\;R\;L_1\cos\delta\right]$.
 
 
 Ainsi on obtient, l'équation :
+
 
 $
 \boxed{
@@ -291,23 +286,23 @@ Des simulations pour différentes valeurs de $F$ donnent les diagrammes (figure 
 \ifprof
 \begin{corrige}
 \begin{itemize}
-\item \textbf{$F=700N$} :Le régime est fortement oscillant. Le système ne parvient pas à soulever
+\item \textbf{$F=\SI{700}{N}$} : le régime est fortement oscillant. Le système ne parvient pas à soulever
 le robot jusqu'à $14^{\circ}$. Celui-ci se comporte comme un oscillateur non
 amorti (le modèle est considéré sans frottement).
 
 Cette valeur de l'effort n'est pas satisfaisante.
 
-\item \textbf{$F=750N$} : Le système atteint les $14^{\circ}$. La pente à l'accostage vaut environ $37.5^{\circ}/s$
+\item \textbf{$F=\SI{750}{N}$} : le système atteint les $14^{\circ}$. La pente à l'accostage vaut environ $37.5^{\circ}/s$
 ce qui est raisonnable vis-à-vis du cahier des charges. Cependant, le
 modèle utilisé pour trouver ce résultat utilise des liaisons parfaites,
-sans frottement. L'effort de $700N$ étant insuffisant avec ce modèle
-parfait, il est possible qu'un effort de $750N$ devienne insuffisant en
+sans frottement. L'effort de $\SI{700}{N}$ étant insuffisant avec ce modèle
+parfait, il est possible qu'un effort de $\SI{750}{N}$ devienne insuffisant en
 réalité.
 
 Cette valeur est théoriquement satisfaisante mais l'écart entre modèle
 et réalité risque de modifier la conclusion.
 
-\item \textbf{$F=800N$} : Le système atteint les $14^{\circ}$ La pente à l'accostage vaut environ $45^{\circ}/s$ ce
+\item \textbf{$F=\SI{800}{N}$} : Le système atteint les $14^{\circ}$ La pente à l'accostage vaut environ $45^{\circ}/s$ ce
 qui est inférieur à la limite de $50^{\circ}/s$ imposée par le cahier des
 charges. L'effort est $15\%$ supérieur à la valeur minimale nécessaire
 pour atteindre les $14^{\circ}$ ce qui semble une marge suffisante pour vaincre
@@ -315,7 +310,7 @@ les frottements non pris en compte dans le modèle.
 
 Cette valeur est satisfaisante.
 
-\item \textbf{$F=950N$} : Le système atteint les $14^{\circ}$. La pente à l'accostage vaut environ $75^{\circ}/s$ ce
+\item \textbf{$F=\SI{950}{N}$} : Le système atteint les $14^{\circ}$. La pente à l'accostage vaut environ $75^{\circ}/s$ ce
 qui est supérieur à la limite de $50^{\circ}/s$ imposée par le cahier des
 charges.
 
