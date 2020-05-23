@@ -1,5 +1,5 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{ \ifprof \normalsize{Activation 2 -- Corrigé } \else  \ifcolle Colle \else Activation 2\fi \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{ \ifprof {Activation 2 -- Corrigé } \else  \ifcolle Colle \else Activation 2\fi \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
@@ -86,9 +86,9 @@ On étudiera la situation suivante (qui correspond à la situation la plus défa
 
 
 \subparagraph{}\textit{Déterminer l’énergie cinétique galiléenne, notée $E_{c_T}$, des 4 brins de câble, de l’ensemble
-des cabines sur la ligne et de la motorisation, en fonction de $M_c$, $M_p$, $\mu$, $L$, $V$, $D_P$ et $I_M$.
-L’application numérique donne pour la situation étudiée en négligeant la longueur de câble
-dans les gares : $E_{c_T}= \SI{6,7e6}{J}$ que l’on peut aussi écrire $E_{c_T}= \dfrac{1}{2}1,3\times 10^{5}V^2$ .}
+des cabines sur la ligne et de la motorisation, en fonction de $M_c$, $M_p$, $\mu$, $L$, $V$, $D_P$ et $I_M$.}
+%L’application numérique donne pour la situation étudiée en négligeant la longueur de câble
+%dans les gares : $E_{c_T}= \SI{6,7e6}{J}$ que l’on peut aussi écrire $E_{c_T}= \dfrac{1}{2}1,3\times 10^{5}V^2$ .}
 \ifprof\begin{corrige} ~\\
 \begin{itemize}
 \item Énergie cinétique des 4 brins de câbles : $\ec{\text{cables}}{0} = \dfrac{1}{2}4 L \mu V^2$.
@@ -107,14 +107,16 @@ On a donc $M_{\text{eq}}=4 L \mu + 16 M_c + 8 M_p  + I_M\dfrac{4}{D_p^2} = 4\tim
 
 
 \subparagraph{}\textit{Déterminer la puissance galiléenne, notée $P_p$, des actions de pesanteur sur l’installation en
-fonction de $M_p$, $V$, $h$, $g$ et $L$. L’application numérique donne pour la situation étudiée :
-$P_p = \SI{-3,6e5}{W}$.}
+fonction de $M_p$, $V$, $h$, $g$ et $L$. %L’application numérique donne pour la situation étudiée :
+%$P_p = \SI{-3,6e5}{W}$.
+}
 \ifprof\begin{corrige} ~\\
 
 Les puissances de la pesanteur sur les cabines montantes s'exprime ainsi : 
 
 $\pext{\text{pes}}{C_m}{0} = \torseurstat{T}{\text{pes}}{C_m} \otimes \torseurcin{V}{C_m}{0}$
 $ = 8 \torseurl{-\left(M_c+M_p\right)g \vect{z}}{\vect{0}}{G_c} \otimes \torseurl{\vect{0}}{V\vect{i}}{G_c}	$
+
 $ = -8\left(M_c+M_p\right)gV\vect{z} \cdot \vect{i}$
 $ = -8\left(M_c+M_p\right)gV \sin \alpha$.
 
@@ -124,6 +126,7 @@ Les puissances de la pesanteur sur les cabines descendantes s'exprime ainsi :
 $\pext{\text{pes}}{C_d}{0} = \torseurstat{T}{\text{pes}}{C_d} \otimes \torseurcin{V}{C_d}{0}$
 $ = 8 \torseurl{-M_c g \vect{z}}{\vect{0}}{G_c} \otimes \torseurl{\vect{0}}{-V\vect{i}}{G_c}	$
 $ = 8M_cgV\vect{z} \cdot \vect{i}$
+
 $ = 8M_c gV \sin \alpha$.
 
 Remarque : la puissance de la pesanteur sur le câble sont opposées pour la partie montante et la partie descendante.
@@ -138,9 +141,12 @@ $=\SI{-359289}{W}$.
 
 \subparagraph{}\textit{Après avoir évalué la vitesse relative et l’action du vent sur une cabine en montée et une
 cabine en descente, déterminer la puissance galiléenne, notée $P_v$ des actions du vent sur
-l’ensemble des cabines en fonction de $\rho$, $S_f$, $V$, $V_e$ et $\alpha = \arcsin(h/L)$. L’application
-numérique donne pour la situation étudiée : $P_v = \SI{- 2,2e5}{W}$.}
+l’ensemble des cabines en fonction de $\rho$, $S_f$, $V$, $V_e$ et $\alpha = \arcsin(h/L)$. %L’application
+%numérique donne pour la situation étudiée : $P_v = \SI{- 2,2e5}{W}$.
+}
 \ifprof\begin{corrige}
+
+%\textbf{Pour moi, le modèle pour l'action mécanique du vent n'est pas clair. On ne sait pas bien si l'effort est suivant $\vect{y}$ ou $\vect{i}$ Prenons .}
 Le vent va dans le sens de la descente.  En montée, 
 $\vectv{G_c}{\text{vent}}{C_m}=\vectv{G_c}{\text{vent}}{0}-\vectv{G_c}{C_m}{0}$ $=-V_e\vect{i} - V\vect{i}$.
 
@@ -150,21 +156,22 @@ $\vectv{G_c}{\text{vent}}{C_d}=\vectv{G_c}{\text{vent}}{0}-\vectv{G_c}{C_d}{0}$ 
 Les puissances du vent  sur les cabines montantes s'expriment ainsi : 
 $p = \dfrac{1}{2}\rho V_a^2 = \dfrac{1}{2}\rho \left(-V-V_e\right)^2 $
 $\pext{\text{vent}}{C_m}{0} = \torseurstat{T}{\text{vent}}{C_m} \otimes \torseurcin{V}{C_m}{0}$
-$ = 8 \torseurl{-pS_f\vect{i}}{\vect{0}}{G_c} \otimes \torseurl{\vect{0}}{V\vect{i}}{G_c}	$
-$ = -8S_fV\dfrac{1}{2}\rho \left(V+V_e\right)^2 $.
+$ = 8 \torseurl{-pS_f\vect{y}}{\vect{0}}{G_c} \otimes \torseurl{\vect{0}}{V\vect{i}}{G_c}	$
+$ = -8S_fV\dfrac{1}{2}\rho \left(V+V_e\right)^2 \cos\alpha$.
 
 
 Les puissances du vent  sur les cabines montantes s'expriment ainsi : 
 $p = \dfrac{1}{2}\rho V_a^2 = \dfrac{1}{2}\rho \left(V-V_e\right)^2 $
 $\pext{\text{vent}}{C_m}{0} = \torseurstat{T}{\text{vent}}{C_m} \otimes \torseurcin{V}{C_m}{0}$
-$ = 8 \torseurl{-pS_f\vect{i}}{\vect{0}}{G_c} \otimes \torseurl{\vect{0}}{-V\vect{i}}{G_c}	$
-$ =8S_fV\dfrac{1}{2}\rho \left(V-V_e\right)^2 $.
+$ = 8 \torseurl{-pS_f\vect{y}}{\vect{0}}{G_c} \otimes \torseurl{\vect{0}}{-V\vect{i}}{G_c}	$
+$ =8S_fV\dfrac{1}{2}\rho \left(V-V_e\right)^2 \cos\alpha$.
 
-Au final, $\pext{\text{vent}}{C_m+C_d}{0} =8S_fV\dfrac{1}{2}\rho \left(\left(V-V_e\right)^2- \left(V+V_e\right)^2\right)$ $=8S_fV\dfrac{1}{2}\rho\left( -4VV_e\right)$
-$=-16S_f \rho V^2 V_e$. Au final, 
+Au final, $\pext{\text{vent}}{C_m+C_d}{0} =8S_fV\dfrac{1}{2}\rho \left(\left(V-V_e\right)^2- \left(V+V_e\right)^2\right)\cos\alpha$ $=8S_fV\dfrac{1}{2}\rho\left( -4VV_e\right)\cos\alpha$
+
+$=-16S_f \rho V^2 V_e\cos\alpha$. On a donc 
 %$ = -8\left(M_c+M_p\right)gV\vect{z} \cdot \vect{i}$
 %$ = -8\left(M_c+M_p\right)gV \sin \alpha$.
-$\pext{\text{vent}}{C_m+C_d}{0} = \SI{-229672}{W} $
+$\pext{\text{vent}}{C_m+C_d}{0} = \SI{-218677}{W} $
 \end{corrige}\else\fi
 
 
@@ -174,17 +181,19 @@ effectivement installée par le constructeur est de \SI{1560}{kW}, commentez vos
 rapport à cette valeur.}
 \ifprof\begin{corrige}
 On applique le théorème de l'énergie cinétique :
+
 $\dfrac{\dd \ec{\Sigma}{0}}{\dd t} =\pext{\text{vent}}{C_m+C_d}{0} + \pext{\text{pes}}{C_m+C_d}{0} + \pext{\text{frottement}}{\Sigma}{0}+ \pext{\text{moteur}}{\Sigma}{0}$.
 
 On a donc, en régime permanent : 
-$0 = -229672-359289-400 000 +P_T $ $ P_T= 229672 + 359289 + 400 000 = \SI{988960}{W} \simeq \SI{1000}{kW}$.
+$0 = -229672-359289-400 000 +P_T $ $ P_T= 218677 + 359289 + 400 000 = \SI{977966}{W} \simeq \SI{1000}{kW}$.
 
 En tenant compte de l'accélération, on a $P_T = \SI{1000}{kW}+  M_{\text{eq}} V\dot{V} =  \SI{1000}{kW}+  M_{\text{eq}} 7,2 \cdot 0,15 \simeq \SI{1266}{kW}$. 
 
-Le surplus de puissance est nécessaire en cas de situation plus défavorable (plus de vent, dépassement du nombre de passagers...).
+Le surplus de puissance est nécessaire en cas de situation plus défavorable (plus de vent, dépassement du nombre de passagers...). 
 \end{corrige}\else\fi
 
-
+\ifprof
+\else
 
 Sur la ligne, les cabines se déplacent à $V = \SI{7,2}{m.s^{-1}}$. En gare, pour permettre l’embarquement et le
 débarquement des passagers, la vitesse maximum de la cabine doit être de $v_0 = \SI{0.3}{m.s^{-1}}$.
@@ -207,16 +216,46 @@ On envisagera une accélération constante des cabines de $a=\SI{1.3}{m.s^{-2}}$
 %Cette poulie a un diamètre de \SI{4}{m}. On notera $K$ le rapport de multiplication de cette chaîne
 %cinématique : K= w roue rapide45/ w poulie guidage déviation
 %La zone de freinage (secteur A) est symétrique de la zone de lancement.
-
+\fi
 \subparagraph{}\textit{Quelle est alors la durée $t$ de la phase d’accélération ? Exprimer la longueur $x$ (en mètre)
 de la zone rectiligne en fonction de $a$ , $v_0$, $t$ et $V$. Pour que l’accélération de $\SI{1,3}{m.s^{-2}}$
 permette le lancement des cabines de $v_0 = \SI{0,3}{m.s^{-1}}$ à $V = \SI{7,2}{m.s^{-1}}$, l’application numérique
 donne environ : $x =\SI{20}{m}$.}
-\ifprof\begin{corrige}
+\ifprof\begin{corrige} ~\\
+
+\begin{minipage}[c]{.4\linewidth}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{cor_01}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[c]{.5\linewidth}
+
+On a $v(t)=at+k$. Par ailleurs, $v(t_2)=V=at_2+k$ et $v(t_1)=v_0=at_1+k$. On a donc $V-v_0 =  a\tau $ soit $\tau = \dfrac{V-v_0}{a} = \dfrac{6,9}{1,3} =\SI{5,3}{s}$.
+
+
+La distance parcourue pendant la durée $\tau$ correspond à l'intégrale de la vitesse soir à l'aire sous la courbe.
+On a donc $x=\tau \cdot\dfrac{1}{2}\left(V+v_0\right)=5,3\times 0,5\times 7,5 = \SI{19,875}{m}$.
+\end{minipage}
 \end{corrige}\else\fi
 
-
-
+\ifcolle
+\else
+\ifprof
+\else
+\noindent \footnotesize
+\begin{tabular}{|p{\linewidth}|}
+\hline
+\begin{enumerate}
+\item  $\ec{\Sigma}{0}= \dfrac{1}{2}\left(4 L \mu + 16 M_c + 8 M_p  + I_M\dfrac{4}{D_p^2}\right)V^2 \simeq \SI{6,7}{MJ}$.
+\item $\pext{\text{pes}}{C_d+C_m}{0}=-8M_pgV \sin \alpha =\SI{-359289}{W}$.
+\item $\pext{\text{vent}}{C_m+C_d}{0} =-16S_f \rho V^2 V_e\cos\alpha = \SI{-218677}{W} $.
+\item $P_T = \SI{1266}{kW}$.
+\item $\tau = \dfrac{V-v_0}{a} = \SI{5,3}{s}$ et $x=\tau \cdot\dfrac{1}{2}\left(V+v_0\right)= \SI{19,875}{m}$.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\fi\fi
+\normalsize
 
 
 \ifprof
@@ -225,6 +264,10 @@ donne environ : $x =\SI{20}{m}$.}
 \end{multicols}
 \fi
 
+
+\ifprof
+\else
+
 \begin{center}
 \includegraphics[width=0.9\textwidth]{fig_01.pdf}
 \end{center}
@@ -232,3 +275,4 @@ donne environ : $x =\SI{20}{m}$.}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{fig_02.png}
 \end{center}
+\fi

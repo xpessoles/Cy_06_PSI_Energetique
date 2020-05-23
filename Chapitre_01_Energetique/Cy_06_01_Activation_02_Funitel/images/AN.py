@@ -27,4 +27,4 @@ Sf = 7.1
 
 pvent = -16*rho*Sf*Ve*V*V
 print(pvent)
-
+print(Meq*V*0.15)
