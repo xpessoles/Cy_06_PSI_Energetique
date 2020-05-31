@@ -229,8 +229,11 @@ Critères & Niveaux \\
 Ne pas stresser la patiente en déplaçant trop rapidement l’ascenseur : limiter la vitesse de
 déplacement rapide & $V_R=\SI{0,15}{m.s^{-1}}$ \\ \hline
 Ne pas blesser la patiente lors de l’approche du bucky : respecter une vitesse lente $V_L$ lors de
-l’accostage & $V_L=\SI{0,02}{m.s^{-1}}$ \\ 
-\hline
+l’accostage & $V_L=\SI{0,02}{m.s^{-1}}$ \\ \hline 
+Respecter une course de réglage de la position de l’ascenseur & $\text{course} = \SI{0,8}{m}$  $\delta_{\text{course}}=\pm\SI{e-3}{m}$ \\ \hline
+Atteindre rapidement la vitesse de déplacement rapide $V_R$: respecter
+la durée $t_a$ de la phase d’accélération constante & $t_a=\SI{0,4}{s}$ (mini) \\
+ \\ \hline
 \end{tabular}
 \end{center}
 
@@ -240,7 +243,7 @@ l’accostage & $V_L=\SI{0,02}{m.s^{-1}}$ \\
 %\textit{}
 \end{center}
 
-\subparagraph{}\textit{Déterminer la vitesse de rotation du moteur $\omega$ en fonction de la vitesse de
+\subparagraph{}\textit{Déterminer la fréquence de rotation du moteur $\omega$ en fonction de la vitesse de
 déplacement $V$ de l’ascenseur. %Compléter alors, le bloc du schéma bloc dudocument réponse. 
 En déduire la vitesse de rotation maximum $\omega_{\text{maxi}}$ que doit avoir le moteur, faire l’application numérique.}
 \ifprof
@@ -252,8 +255,99 @@ Application numérique : $\omega_{\text{maxi}} = 0,15\dfrac{2\pi}{6\cdot 10^{-3}
 \else
 \fi
 
+Pour déterminer les performances minimales du moteur, on étudie la phase de montée de l’ascenseur définie par :
+\begin{enumerate}
+\item départ en position basse ( $y=0$ à l’instant $t=0$);
+\item mise en mouvement ascendant de l’ascenseur à accélération constante $a$ pour atteindre la vitesse $V_R$ rapide en respectant les contraintes du cahier des charges;
+\item arrêt de l’ascenseur à la position $y=\SI{0,8}{m}$ (la phase de décélération est telle que la décélération est constante et sa durée égale à $t_a$).
+\end{enumerate}
 
-\subparagraph{}\textit{}
+\subparagraph{}\textit{Afin d’avoir une meilleure représentation de cette phase de montée de
+l’ascenseur, représenter la loi d’accélération en fonction du temps ainsi que la loi
+de vitesse et celle du déplacement $y$ de l’ascenseur. Indiquer les valeurs
+numériques de l’accélération, de la durée de la phase d’accélération, du déplacement
+réalisé pendant chaque phase de déplacement à accélération constante et de la durée du déplacement à vitesse constante.}
+\ifprof
+\begin{corrige}~\\
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{cor_01}
+\end{center}
+
+L’accélération $a_{\text{max}}$ est donnée par $a_{\text{max}} = \dfrac{V_R}{t_a}$ $=\dfrac{0,15}{0,4}$ $=\SI{0,375}{m.s^{-2}}$. 
+
+Les distances parcourues correspondent à l'aire sous la courbe du profil de vitesse. La distance d'accélération et de décélération sont données par $d_a=\dfrac{1}{2}V_R t_a$ $=\dfrac{1}{2}0,15\times 0,4$ $=\SI{0,03}{m}$.
+
+En conséquence, la distance à parcourir à vitesse constante est $d_c=0,8-2\times 0,03$ $=\SI{0,74}{m}$. Le temps pour parcourir cette distance est $t_c=\dfrac{d_c}{V_R}$ $=\dfrac{0,74}{0,15}$ $=\SI{4,13}{s}$.
+\end{corrige}
+\else
+\fi
+
+\subsection*{Solution sans assistance}
+
+On souhaite déterminer le couple moteur. Pour cela on propose d’appliquer le théorème de
+l’énergie-puissance au système isolé $\Sigma$ (rotor du moteur + vis + ascenseur) en mouvement
+par rapport au bâti supposé galiléen. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_10_bis}
+%\textit{}
+\end{center}
+
+On notera :
+\begin{itemize}
+\item $\vect{g}=-g\vect{y}$ l’accélération de la pesanteur. On prendra $g=\SI{9,81}{m.s^{-2}}$;
+\item $C$ le couple exercé par le stator sur le rotor du moteur.
+\end{itemize}
+
+\subparagraph{}\textit{Déterminer l’énergie cinétique galiléenne, notée $\ec{\Sigma}{0}$, du système isolé. Mettre $\ec{\Sigma}{0}$ sous la forme : $\ec{\Sigma}{0} = \dfrac{1}{2}M_eV^2$. Donner l’expression littérale de la masse équivalente $M_e$ et faire l’application numérique.}
+\ifprof
+\begin{corrige}~\\
+Calcul de l'énergie cinétique : $\ec{\Sigma}{0} = \dfrac{1}{2}\left( J_R+J_V\right) \left(  V\dfrac{2\pi}{p_v}\right)^2+\dfrac{1}{2}MV^2$ $= \dfrac{1}{2}\left(\left( J_R+J_V\right) \dfrac{4\pi^2}{p_v^2} +M \right)V^2$.
+
+On a donc $M_e = \left( J_R+J_V\right) \dfrac{4\pi^2}{p_v^2} +M$ $=\left( 2,6\times 10^{-4}+1,2\times 10^{-4}\right) \dfrac{4\pi^2}{\left( 6\times 10^{-3}\right)^2} +130$
+$=\left( 2,6\times 10^{-4}+1,2\times 10^{-4}\right) \dfrac{4\pi^2}{\left( 6\times 10^{-3}\right)^2} +150 = \SI{547}{kg}$.
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{En supposant que toutes les liaisons sont parfaites, appliquer le théorème de
+l’énergie puissance au système isolé (rotor du moteur + vis + ascenseur). La
+démarche suivie doit être clairement indiquée. En déduire l’expression littérale
+de $C$ en fonction de $V$ et/ou de ses dérivées, $\omega$ et/ou ses dérivées n’apparaîtront
+pas dans l’expression littérale de $C$.}
+\ifprof
+\begin{corrige}~\\
+\begin{itemize}
+\item On isole $\Sigma$. 
+\item Bilan des puissances intérieures : liaisons parfaites $\mathcal{P}_{\text{int}} = 0$.
+\item Bilan des puissances extérieures : 
+\begin{itemize}
+\item $\pext{\text{pes}}{\text{Asc.}}{0}=-MgV$;
+\item $\pext{\text{mot}}{\text{Asc.}}{0}=C\omega$.
+\end{itemize}
+\item Calcul de l'énergie cinétique : $\ec{\Sigma}{0} = \dfrac{1}{2}M_eV^2$
+\end{itemize}
+On applique le théorème de l'énergie cinétique : $M_e V \dot{V} =C\dfrac{V2\pi}{p_v} - MgV$ et donc 
+$M_e \dot{V} =C\dfrac{2\pi}{p_v} - Mg$. Au final, $C = \dfrac{p_v}{2\pi}\left(M_e \dot{V} +Mg\right) $.
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{En déduire la valeur du couple maximum $C_{\text{Max}}$ que le moteur doit pouvoir
+appliquer sur la vis ainsi que la puissance nécessaire $P_0$ de ce moteur.}
+\ifprof
+\begin{corrige}~\\
+$C = \dfrac{p_v}{2\pi}\left(M_e \dot{V} +Mg\right) $ $=\dfrac{6\times 10^{-3}}{2\pi}\left(547 \times 0,15 +130 \times 9,81\right)$ $=\SI{1,4}{Nm}$.
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{En déduire la puissance $P$ nécessaire du moteur si le rendement du dispositif
+vis-écrou vaut $\eta=0,3$.}
 \ifprof
 \begin{corrige}~\\
 \end{corrige}
@@ -261,6 +355,257 @@ Application numérique : $\omega_{\text{maxi}} = 0,15\dfrac{2\pi}{6\cdot 10^{-3}
 \fi
 
 
+
+\subsection*{Cas d’une motorisation assistée par un contrepoids}
+
+
+Le dispositif d’assistance a pour rôle de diminuer le couple moteur en compensant le poids de l’ascenseur. L’emplacement disponible, pour ce dispositif, est celui occupé par le vérin à gaz, voir figures précédentes.
+
+Dans cette solution un contrepoids est choisi pour compenser exactement
+le poids de l’ascenseur. Une courroie crantée s’enroule sur un demi-tour d’une
+poulie d’axe fixe par rapport au bâti. Une des extrémités de cette courroie est
+attachée à l’ascenseur, l’autre au contrepoids.
+
+\subparagraph{}\textit{Faire un schéma de principe de ce dispositif.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Donner l’expression littérale de la masse équivalente $M_e$ et faire l’application numérique.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En supposant que toutes les liaisons sont parfaites, déterminer l’expression littérale de $C$ en fonction de $V$ et/ou de ses dérivées, $\omega$ et/ou ses dérivées n’apparaîtront pas dans l’expression littérale de $C$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En déduire la valeur du couple maximum $C_{\text{Max}}$ que le moteur doit pouvoir
+appliquer sur la vis ainsi que la puissance $P_0$ nécessaire de ce moteur.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En déduire la puissance nécessaire $P$ du moteur si le rendement du dispositif vis-écrou vaut $\eta=0,3$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+
+
+\subparagraph{}\textit{Le contrepoids sera réalisé dans un alliage de masse volumique $\SI{9e3}{kg.m^3}$. L’emplacement disponible est un parallélépipède rectangle de
+section $0,2 \times \SI{0,1}{m^2}$ et de hauteur \SI{1,4}{m}. Cette solution est-elle envisageable ?}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subsection*{Motorisation assistée par un ressort de traction}
+Dans cette solution un ressort, travaillant en traction, est choisi pour compenser
+le poids de l’ascenseur. Une courroie crantée s’enroule sur un demi-tour
+d’une poulie d’axe fixe par rapport au bâti. Une des extrémités de cette courroie
+est attachée à l’ascenseur, l’autre à l’une des extrémités du ressort.
+
+\subparagraph{}\textit{Faire un schéma de principe du dispositif.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+
+
+\subparagraph{}\textit{L’effort minimal développé par le ressort doit compenser exactement le poids
+de l’ascenseur. La variation de l’effort de compensation, exercé par le ressort,
+sera limitée à 10\,\% sur l’ensemble de la course. Déterminer la raideur du ressort,
+ainsi que l’effort de compensation maximum $F_{\text{c maxi}}$ qu’il exercera. Représenter
+la courbe de variation de cet effort en fonction du déplacement $y$ de l’ascenseur.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+L’emplacement disponible ne permet pas de placer un ressort de diamètre
+nominal $D$ supérieur à \SI{0,1}{m}. Le ressort de traction sera réalisé dans un acier
+allié de résistance élastique au glissement $R_{eg}=\SI{560}{MPa}$ et de module de Coulomb $G=\SI{82000}{MPa}$. On prendra un coefficient de sécurité $s=2$. Pour que le
+ressort résiste à l’effort maximal $F_{\text{c maxi}}$, il doit avoir un diamètre
+$d\geq \sqrt[3]{\dfrac{8 F_{\text{c maxi}} D s}{\pi R_{eg}}}$, 
+c'est-à-dire $d\geq 9,7 \times 10^{-4}\sqrt[3]{F_{\text{c maxi}}}$.
+
+Pour obtenir un ressort de raideur $r$ il faut un nombre de spires $n=\dfrac{Gd^4}{8D^3 r}$, c'est-à-dire $n\simeq 10^13\dfrac{d^4}{r}$.
+
+\subparagraph{}\textit{La longueur du ressort est-elle compatible avec l’emplacement disponible ?}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subsection*{Assistance à l’aide d’un vérin à gaz}
+Le schéma de principe de ce dispositif a été donné précédemment. Cette
+figure définit le montage. Le corps du vérin est lié au bâti. Une poulie crantée
+est en liaison pivot avec l’extrémité de la tige du vérin. Une courroie crantée
+s’enroule (un demi-tour) sur la poulie et est liée au bâti à une de ses extrémités.
+L’autre extrémité de la courroie est liée à l’ascenseur.
+
+\subparagraph{}\textit{Déterminer la relation existant entre le déplacement $y$ de l’ascenseur et le
+déplacement $y_T$ de la tige du vérin. En déduire la course $\Delta y_T$ nécessaire de la tige du vérin à gaz.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{Le module de l’effort appliqué par la courroie sur l’ascenseur est noté $F_c$.
+C’est l’effort de compensation sur l’ascenseur. En isolant la poulie, déterminer
+la relation existant entre l’effort $F$ développé par le vérin et l’effort de compensation $F_c$. 
+%Compléter alors, le bloc 12b du schéma-bloc du document réponse. 
+En déduire l’effort minimum $F_{\text{mini}}$ développé par le vérin.}
+
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+
+Le vérin à gaz est présenté sur le dessin ci-dessous.
+\begin{center}
+\includegraphics[width=\linewidth]{fig_11}
+\end{center}
+
+\subparagraph{}\textit{Pour étudier l’action exercée par l’azote sous pression sur la tige du vérin on
+propose les deux modèles ci-dessous. Montrer que lorsque la tige n’est pas
+en mouvement ces deux modèles de comportement du vérin à gaz, sont équivalents
+du point de vue des actions qu’exerce l’azote sur la tige du vérin.
+Remarque : pour la suite de cette étude on négligera les pertes de charge lors de
+l’écoulement du fluide à travers l’orifice du piston.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_12}
+\end{center}
+
+\subparagraph{}\textit{Compte tenu des efforts on pré-dimensionne la tige du vérin à un diamètre $d=\SI{15e-3}{m}$. On appelle pression de gonflage, la pression de l’azote que le
+vérin contient quand la tige est complètement sortie. Déterminer la pression de
+gonflage du vérin, cette pression sera notée $p_2$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+Dans la gamme de vérin à gaz on choisit le vérin de diamètre le plus grand
+$D=\SI{57e-3}{m}$. L’espace disponible permet de placer un vérin dont la chambre
+a une longueur maximale $L=\SI{1}{m}$. Soient $p_1$, $F_1$, $V_1$ la pression,
+l’effort de poussée du vérin et le volume de gaz dans le vérin pour la position
+ascenseur en bas et $p_2$, $F_{\text{mini}}$, $V_2$ pour la position ascenseur en haut. Pour cette
+position, la tige du vérin est complètement sortie.
+\subparagraph{}\textit{Donner l’expression littérale
+de la raideur de ce vérin à gaz en fonction de $F_1$, $F_{\text{mini}}$ et $\Delta_{y_T}$. Exprimer $F_{\text{mini}}$
+en fonction de $p_2$ et d’une caractéristique géométrique du vérin. Exprimer $F_1$
+en fonction de $p_1$ et d’une caractéristique géométrique du vérin. On suppose que
+la transformation de l’azote entre les états 1 et 2 est isotherme. Donner
+l’expression littérale de la raideur $r$ de ce vérin à gaz en fonction de $F_{\text{mini}}$, $d$,
+$D$, $L$ et $\Delta_{y_T}$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{On cherche à obtenir une raideur la plus faible possible, choisir alors la longueur $L$
+et calculer la raideur $r$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+On prendra $r=\SI{180}{Nm^{-1}}$ pour la suite du problème.
+
+\subparagraph{}\textit{Déterminer l’effort maximal $F_{\text{Maxi}}$ développé par le vérin. Faire l’application
+numérique. Calculer la variation en \% de $F$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Déterminer la relation $F=F(y_T)$.}
+% Compléter alors, l’entrée et le bloc du schéma-bloc du document réponse.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+On considérera dans cette question que l’effort de compensation $F_c$ est
+constant.
+
+\subparagraph{}\textit{En supposant que toutes les liaisons sont parfaites, déterminer l’expression
+littérale de $C$ en fonction de $a$, $M_e$, $F_c$, $M$...}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Exprimer ensuite $a$ en fonction de $C$, $M_e$, $F_c$, $M$ ...}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En déduire la valeur du couple maximum $C_{\text{Max}}$ que le moteur doit pouvoir
+appliquer sur la vis ainsi que la puissance $P_0$ nécessaire de ce moteur (prendre $F_c = \SI{1300}{N}$).}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En déduire la puissance $P$ nécessaire du moteur si le rendement du dispositif
+vis-écrou vaut $\eta=0,3$.}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+\subsection*{Synthèse}
+
+\subparagraph{}\textit{On se propose de résumer l’étude comparative précédente dans un tableau. Indiquer les valeurs calculées pour la puissance du moteur, le couple du moteur, la masse équivalente. On rappelle que
+le calcul de la masse équivalente a été effectué en prenant l’inertie de la vis
+dimensionnée pour la solution avec vérin à gaz. Compte tenu de cette remarque,
+indiquer si la masse équivalente, trouvée en réponse aux questions précédentes,
+a été obtenue par excès ou par défaut. L’encombrement est-il (oui ou non) compatible
+avec le cahier des charges ? La masse de l’ensemble est-elle
+satisfaisante ?}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
 
 %\subparagraph{}\textit{}
 %\ifprof
@@ -271,7 +616,7 @@ Application numérique : $\omega_{\text{maxi}} = 0,15\dfrac{2\pi}{6\cdot 10^{-3}
 %
 %
 %
-%
+%%
 %\subparagraph{}\textit{}
 %\ifprof
 %\begin{corrige}~\\
