@@ -340,8 +340,13 @@ $M_e \dot{V} =C\dfrac{2\pi}{p_v} - Mg$. Au final, $C = \dfrac{p_v}{2\pi}\left(M_
 appliquer sur la vis ainsi que la puissance nécessaire $P_0$ de ce moteur.}
 \ifprof
 \begin{corrige}~\\
-$C = \dfrac{p_v}{2\pi}\left(M_e \dot{V} +Mg\right) $ $=\dfrac{6\times 10^{-3}}{2\pi}\left(547 \times 0,15 +130 \times 9,81\right)$ $=\SI{1,4}{Nm}$.
+Le couple maximal est nécessaire en phase d’accélération.
 
+$C_{\text{Max}} = \dfrac{p_v}{2\pi}\left(M_e \dot{V} +Mg\right) $ 
+
+$=\dfrac{6\times 10^{-3}}{2\pi}\left(547 \times 0,15 +130 \times 9,81\right)$ $=\SI{1,4}{Nm}$.
+
+La puissance nécessaire est alors $P_0 = C_{\text{Max}}  \cdot \omega_{\text{maxi}}$ $=1,4\times 157 =\SI{222}{W}$.
 \end{corrige}
 \else
 \fi
@@ -351,6 +356,9 @@ $C = \dfrac{p_v}{2\pi}\left(M_e \dot{V} +Mg\right) $ $=\dfrac{6\times 10^{-3}}{2
 vis-écrou vaut $\eta=0,3$.}
 \ifprof
 \begin{corrige}~\\
+\textbf{Le rendement n'a vraiment de sens qu'en régime permanent.}
+Ici, le rendement va nous permettre de majorer la puissance motrice nécessaire.
+On a $P=\dfrac{222}{0,3}= \SI{740}{W}$.
 \end{corrige}
 \else
 \fi
@@ -364,19 +372,26 @@ Le dispositif d’assistance a pour rôle de diminuer le couple moteur en compen
 
 Dans cette solution un contrepoids est choisi pour compenser exactement
 le poids de l’ascenseur. Une courroie crantée s’enroule sur un demi-tour d’une
-poulie d’axe fixe par rapport au bâti. Une des extrémités de cette courroie est
+poulie d’axe fixe par rapport au bâti et d'inertie négligeable. Une des extrémités de cette courroie est
 attachée à l’ascenseur, l’autre au contrepoids.
 
 \subparagraph{}\textit{Faire un schéma de principe de ce dispositif.}
 \ifprof
 \begin{corrige}~\\
+\begin{center}
+\includegraphics[width=\linewidth]{cor_02}
+%\textit{}
+\end{center}
+
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}\textit{Donner l’expression littérale de la masse équivalente $M_e$ et faire l’application numérique.}
+\subparagraph{}\textit{Donner l’expression littérale de la masse équivalente $M_e'$ et faire l’application numérique.}
 \ifprof
 \begin{corrige}~\\
+En prenant un contrepoids de même masse que l'ascenseur et en négligeant l'inertie de la poulie, le contrepoids se déplaçant à la même vitesse que l'ascenseur (mais dans un sens opposé), on a
+$M_e' = \left( J_R+J_V\right) \dfrac{4\pi^2}{p_v^2} +2M$, soit $M_e' = \SI{677}{kg}$
 \end{corrige}
 \else
 \fi
@@ -384,6 +399,10 @@ attachée à l’ascenseur, l’autre au contrepoids.
 \subparagraph{}\textit{En supposant que toutes les liaisons sont parfaites, déterminer l’expression littérale de $C$ en fonction de $V$ et/ou de ses dérivées, $\omega$ et/ou ses dérivées n’apparaîtront pas dans l’expression littérale de $C$.}
 \ifprof
 \begin{corrige}~\\
+Par rapport au TEC effectué précédemment, il faut ajouter la puissance des actions de pesanteurs sur le contrepoids.
+Cette puissance est opposée à la puissance des actions de pesanteur sur l'ascenseur.
+ $C = \dfrac{p_v}{2\pi}M_e' \dot{V}$.
+ 
 \end{corrige}
 \else
 \fi
@@ -392,6 +411,8 @@ attachée à l’ascenseur, l’autre au contrepoids.
 appliquer sur la vis ainsi que la puissance $P_0$ nécessaire de ce moteur.}
 \ifprof
 \begin{corrige}~\\
+$C_{\text{Max}} = \SI{0,24}{Nm}$.
+
 \end{corrige}
 \else
 \fi

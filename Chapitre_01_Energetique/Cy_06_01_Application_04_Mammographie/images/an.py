@@ -27,26 +27,45 @@ t3 = t2+ta
 temps = np.linspace(0,t3,1000)
 v=[]
 a=[]
+om = []
 C = []
+P = []
 for t in temps :
     if t<=t1:
         v.append(t*amax)
         a.append(amax)
         C.append(pv/(2*math.pi) * (Meq*amax+M*g))
+        om.append(v[-1]*2*math.pi/pv)
+        P.append(om[-1]*C[-1])
     elif t<=t2 :
         v.append(vr)
         a.append(0)
         C.append(pv/(2*math.pi) * (Meq*0+M*g))
+        om.append(v[-1]*2*math.pi/pv)
+        P.append(om[-1]*C[-1])
     else :
         # v(t)=-ax+b
         # v(t3)=0 >> a*t3 = b
         v.append(-amax*t+amax*t3)
         a.append(-amax)
         C.append(pv/(2*math.pi) * (-Meq*amax+M*g))
+        om.append(v[-1]*2*math.pi/pv)
+        P.append(om[-1]*C[-1])
+
+P0 = max(om)*max(C)
+print(P0," W")
+print(P0/0.3," W")
 
 #plt.plot(temps,v)
 #plt.plot(temps,a)
-plt.plot(temps,C)
-plt.show()
+plt.plot(temps,P)
+#plt.plot(temps,om)
+#plt.show()
 
 
+# Avec contrepoids
+
+Meq = (Jr+Jv)*((2*math.pi)/(pv))**2+2*M
+
+print("Meq ",Meq)
+C_cp = pv/(2*math.pi) * (Meq*amax+M*g)
