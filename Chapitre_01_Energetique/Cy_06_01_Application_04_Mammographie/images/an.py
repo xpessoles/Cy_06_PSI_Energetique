@@ -64,8 +64,18 @@ plt.plot(temps,P)
 
 
 # Avec contrepoids
-
+omax = max(om)
 Meq = (Jr+Jv)*((2*math.pi)/(pv))**2+2*M
 
 print("Meq ",Meq)
-C_cp = pv/(2*math.pi) * (Meq*amax+M*g)
+C_cp = pv/(2*math.pi) * (Meq*amax)
+print(C_cp)
+
+k = 0.1*M*g/0.8
+
+d = 9.7e-4*(M*g*1.1)**(1/3)
+n  = (10**13)*d**4/k
+
+#Vérin a azote
+C = (pv/2/math.pi)*(547*amax-M*g+1300)
+
