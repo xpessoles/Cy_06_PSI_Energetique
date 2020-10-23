@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -559,17 +559,21 @@ Le moteur tourne à la vitesse de rotation $N_1=1\,400\;\text{tr/min}$ le (le ro
 
 
 
+\ifprof
+\newpage
+\else
+\fi
+
 \section*{Exercice 5 -- Trains épicycloïdaux}
 \setcounter{exo}{0}
 
-\ifprof
-\else
+
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_01.png}
 \end{center}
-\fi
+
 
 
 \subparagraph{}
@@ -589,15 +593,13 @@ $\Leftrightarrow \omega_{30}=\dfrac{Z_1}{Z_0+Z_1}\omega_{10} $
  \fi
 
 
-\ifprof
-\else
 
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_02.png}
 \end{center}
-\fi
+
 
 
 
@@ -687,19 +689,14 @@ $\Leftrightarrow  \dfrac{\omega_{30}}{\omega_{10}} = \dfrac{ \dfrac{Z_{1}Z_{22}}
  \fi
 
 
-\ifprof
-\else
+
 Soit le train épicycloïdal suivant. 
 
 \begin{center}
  \includegraphics[width=.6\linewidth]{images/TrainEpi_04.png}
 \end{center}
-\fi
 
-\ifprof
-\newpage
-\else
-\fi
+
 
 \subparagraph{}
 \textit{Déterminer $\omega_{40}$ en fonction de  $\omega_{30}$ et $\omega_{10}$.}
@@ -734,9 +731,15 @@ $\Leftrightarrow  \dfrac{\omega_{30}}{\omega_{10}} = \dfrac{ \dfrac{Z_{1}Z_{22}}
  \else
  \fi
 
+
 %
 %\section*{Exercice 6 -- Train épicycloïdal -- Type 3}
 %\setcounter{exo}{0}
+
+\ifprof
+\newpage
+\else
+\fi
 
 \section*{Exercice 6 -- Train épicycloïdal -- Type 4 -- Poulie Redex}
 \setcounter{exo}{0}
