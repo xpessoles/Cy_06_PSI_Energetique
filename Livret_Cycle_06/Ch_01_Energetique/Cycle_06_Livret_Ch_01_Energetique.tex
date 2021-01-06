@@ -10,7 +10,12 @@
 
 \livrettrue
 
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{1.1cm}
+\def\xxYOnget{1.1cm}
+
 \begin{document}
+
 
 \newcommand{\chap}{Chapitre_01_Energetique}
 \newcommand{\td}{Cy_04_01_Activation_DeposeComposants}
@@ -40,8 +45,10 @@
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 %\input{../../\chap/\td/\td.tex}
 
-%%% MC2E Mines 2016
-\renewcommand{\td}{Cy_06_01_Application_01_MC2E}
+
+
+%%% Réducteurs
+\renewcommand{\td}{Application_InertieEquivalente_Reducteur}
 %% Sujet Normal par défaut
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
@@ -59,6 +66,27 @@
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 %\input{../../\chap/\td/\td.tex}
+
+
+%%%% MC2E Mines 2016
+%\renewcommand{\td}{Cy_06_01_Application_01_MC2E}
+%%% Sujet Normal par défaut
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
+%\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%\input{../../\chap/\td/\td.tex}
+%
+%%% Sujet colle (TO DO)
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
+%\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%%\input{../../\chap/\td/\td.tex}
+%
+%%% Sujet Corrigé
+%\newpage
+%\fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
+%\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%%\input{../../\chap/\td/\td.tex}
 
 
 %%% Tapis de course
@@ -119,6 +147,17 @@
 
 %%% Quille
 \renewcommand{\td}{Cy_06_01_TD_02_Quille}
+%% Sujet Normal par défaut
+\newpage
+\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+
+
+
+
+%%% Twizy
+\renewcommand{\td}{Cy_06_01_TD_03_Twizy}
 %% Sujet Normal par défaut
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
